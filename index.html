@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한국아동상담센터 – 30년의 통찰, 수만 시간의 임상이 증명하는 변화</title>
+<meta name="description" content="1996년부터 아이들의 곁을 지켜온 한국아동상담센터. 놀이치료, 감각통합치료, 언어치료, 학습치료, 경계성 지능, 발달성 협응장애 전문 클리닉.">
+<meta name="keywords" content="한국아동상담센터, 놀이치료 강남, 감각통합치료, 경계성 지능, 발달성 협응장애, 작업치료, 아동상담, 언어치료">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #2E5A4A;
+    --green-light: #3d7a64;
+    --green-pale: #e8f0ed;
+    --beige: #F8F1E9;
+    --beige-dark: #ede5d8;
+    --coral: #D4735A;
+    --coral-light: #e8967f;
+    --text: #2a2a2a;
+    --text-mid: #555555;
+    --text-light: #888888;
+    --white: #ffffff;
+    --serif: 'Noto Serif KR', serif;
+    --sans: 'Noto Sans KR', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(46,90,74,0.1);
+    padding: 0 40px;
+    height: 72px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,0.08); }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none;
+  }
+  .nav-logo-icon {
+    width: 40px; height: 40px;
+    background: var(--green);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .nav-logo-text { font-family: var(--serif); }
+  .nav-logo-text .main { font-size: 16px; font-weight: 700; color: var(--green); display: block; line-height: 1.2; }
+  .nav-logo-text .sub { font-size: 11px; color: var(--text-light); letter-spacing: 0.05em; }
+
+  .nav-menu { display: flex; gap: 8px; align-items: center; list-style: none; }
+  .nav-menu > li { position: relative; }
+  .nav-menu > li > a {
+    display: block; padding: 8px 14px;
+    font-size: 14px; font-weight: 500; color: var(--text-mid);
+    text-decoration: none; border-radius: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .nav-menu > li > a:hover { color: var(--green); background: var(--green-pale); }
+
+  .dropdown {
+    position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+    background: white; border-radius: 12px; padding: 8px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    min-width: 200px; opacity: 0; pointer-events: none;
+    transition: all 0.2s; transform-origin: top center;
+    border: 1px solid rgba(46,90,74,0.08);
+  }
+  .nav-menu > li:hover .dropdown { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
+  .dropdown a {
+    display: block; padding: 10px 16px; font-size: 13px;
+    color: var(--text-mid); text-decoration: none; border-radius: 6px;
+    transition: all 0.15s;
+  }
+  .dropdown a:hover { background: var(--green-pale); color: var(--green); }
+
+  .nav-cta {
+    background: var(--coral) !important; color: white !important;
+    padding: 10px 20px !important; border-radius: 24px !important;
+    font-weight: 600 !important; font-size: 13px !important;
+    transition: all 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--coral-light) !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(212,115,90,0.35) !important; }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
+
+  /* ─── HERO CAROUSEL ─── */
+  #home {
+    position: relative; height: 100vh; min-height: 600px;
+    overflow: hidden; display: flex; align-items: center;
+  }
+
+  .carousel-track {
+    position: absolute; inset: 0;
+    display: flex; transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  .carousel-slide {
+    min-width: 100%; height: 100%;
+    position: relative; flex-shrink: 0;
+  }
+  .carousel-slide img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: brightness(0.55);
+  }
+
+  /* Fallback gradient slides when images fail */
+  .slide-gradient-1 { background: linear-gradient(135deg, #1a3d2f 0%, #2E5A4A 50%, #3d7a64 100%); }
+  .slide-gradient-2 { background: linear-gradient(135deg, #2a4a3a 0%, #1e4030 60%, #2E5A4A 100%); }
+  .slide-gradient-3 { background: linear-gradient(135deg, #3a5a4a 0%, #2E5A4A 40%, #1a3028 100%); }
+
+  .slide-scene {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .slide-scene svg { width: 100%; height: 100%; opacity: 0.25; }
+
+  .carousel-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(10,30,20,0.85) 0%, rgba(10,30,20,0.4) 60%, transparent 100%);
+  }
+
+  .hero-content {
+    position: relative; z-index: 10;
+    max-width: 680px; padding: 0 60px;
+    margin-top: 72px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.9); font-size: 12px; font-weight: 500;
+    padding: 6px 16px; border-radius: 20px; margin-bottom: 24px;
+    backdrop-filter: blur(8px); letter-spacing: 0.08em;
+  }
+  .hero-badge::before { content: '●'; color: #7de8b4; font-size: 8px; }
+
+  .hero-title {
+    font-family: var(--serif); font-size: clamp(28px, 4vw, 52px);
+    font-weight: 600; color: white; line-height: 1.3;
+    margin-bottom: 20px; letter-spacing: -0.01em;
+  }
+  .hero-title em { font-style: normal; color: #a8d8c0; }
+
+  .hero-sub {
+    font-size: clamp(14px, 1.5vw, 18px); color: rgba(255,255,255,0.8);
+    line-height: 1.7; margin-bottom: 36px; font-weight: 300;
+  }
+
+  .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--coral); color: white;
+    padding: 16px 32px; border-radius: 32px;
+    font-size: 15px; font-weight: 600; text-decoration: none;
+    transition: all 0.25s; box-shadow: 0 4px 20px rgba(212,115,90,0.4);
+  }
+  .btn-primary:hover { background: var(--coral-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(212,115,90,0.5); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.15); color: white;
+    padding: 16px 32px; border-radius: 32px;
+    font-size: 15px; font-weight: 500; text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(8px);
+    transition: all 0.25s;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.25); transform: translateY(-2px); }
+
+  .carousel-dots {
+    position: absolute; bottom: 40px; left: 60px; z-index: 10;
+    display: flex; gap: 10px;
+  }
+  .carousel-dot {
+    width: 24px; height: 3px; border-radius: 2px;
+    background: rgba(255,255,255,0.35); cursor: pointer;
+    transition: all 0.3s;
+  }
+  .carousel-dot.active { background: white; width: 40px; }
+
+  .carousel-stats {
+    position: absolute; bottom: 40px; right: 60px; z-index: 10;
+    display: flex; gap: 32px;
+  }
+  .stat-item { text-align: center; }
+  .stat-num { font-family: var(--serif); font-size: 28px; font-weight: 700; color: white; display: block; line-height: 1; }
+  .stat-label { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 4px; display: block; letter-spacing: 0.05em; }
+
+  /* ─── SECTION COMMON ─── */
+  section { padding: 100px 40px; }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.15em;
+    color: var(--coral); text-transform: uppercase; margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: var(--serif); font-size: clamp(24px, 3vw, 40px);
+    font-weight: 600; color: var(--text); line-height: 1.3;
+    margin-bottom: 16px;
+  }
+  .section-desc {
+    font-size: 16px; color: var(--text-mid); line-height: 1.8;
+    max-width: 640px;
+  }
+  .section-header { margin-bottom: 60px; }
+
+  /* ─── WHY US CARDS ─── */
+  #why {
+    background: var(--beige);
+    position: relative; overflow: hidden;
+  }
+  #why::before {
+    content: ''; position: absolute; top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(46,90,74,0.06) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .why-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  }
+  .why-card {
+    background: white; border-radius: 20px; padding: 36px 28px;
+    transition: all 0.3s; position: relative; overflow: hidden;
+    border: 1px solid rgba(46,90,74,0.06);
+  }
+  .why-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: var(--green); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .why-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+  .why-card:hover::after { transform: scaleX(1); }
+  .why-icon {
+    width: 56px; height: 56px; background: var(--green-pale); border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; margin-bottom: 20px;
+  }
+  .why-card h3 { font-family: var(--serif); font-size: 18px; font-weight: 600; margin-bottom: 10px; color: var(--text); }
+  .why-card p { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+  .why-num {
+    position: absolute; top: 20px; right: 24px;
+    font-family: var(--serif); font-size: 48px; font-weight: 700;
+    color: rgba(46,90,74,0.06); line-height: 1;
+  }
+
+  /* ─── ABOUT ─── */
+  #about { background: white; }
+
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .about-image-stack { position: relative; }
+  .about-img-main {
+    width: 100%; aspect-ratio: 4/5; object-fit: cover;
+    border-radius: 24px; display: block;
+  }
+  .about-img-accent {
+    position: absolute; bottom: -30px; right: -30px;
+    width: 55%; aspect-ratio: 1/1; object-fit: cover;
+    border-radius: 20px; border: 6px solid white;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  }
+  .about-badge-float {
+    position: absolute; top: 30px; left: -20px;
+    background: var(--green); color: white; border-radius: 16px;
+    padding: 16px 20px; text-align: center;
+    box-shadow: 0 8px 24px rgba(46,90,74,0.3);
+  }
+  .about-badge-float .num { font-family: var(--serif); font-size: 32px; font-weight: 700; display: block; line-height: 1; }
+  .about-badge-float .txt { font-size: 11px; opacity: 0.85; margin-top: 4px; display: block; }
+
+  /* SVG placeholder illustrations */
+  .img-placeholder {
+    border-radius: 24px; overflow: hidden;
+    background: var(--green-pale);
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .about-points { margin: 28px 0; display: flex; flex-direction: column; gap: 16px; }
+  .about-point {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 18px 20px; background: var(--beige);
+    border-radius: 14px; transition: all 0.2s;
+  }
+  .about-point:hover { background: var(--green-pale); }
+  .point-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+  .about-point h4 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .about-point p { font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+
+  /* ─── PROGRAMS ─── */
+  #programs { background: var(--green); }
+  #programs .section-label { color: #a8d8c0; }
+  #programs .section-title { color: white; }
+  #programs .section-desc { color: rgba(255,255,255,0.7); }
+
+  .programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .program-card {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px; padding: 32px 28px;
+    transition: all 0.3s; cursor: pointer;
+  }
+  .program-card:hover { background: rgba(255,255,255,0.14); transform: translateY(-4px); }
+  .program-card .icon { font-size: 32px; margin-bottom: 16px; display: block; }
+  .program-card h3 { font-family: var(--serif); font-size: 18px; font-weight: 600; color: white; margin-bottom: 10px; }
+  .program-card p { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.7; }
+  .program-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+  .program-tag {
+    font-size: 11px; padding: 4px 10px; border-radius: 12px;
+    background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  /* ─── THERAPISTS ─── */
+  #therapists { background: var(--beige); }
+
+  .therapists-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+  }
+  .therapist-card {
+    background: white; border-radius: 24px; overflow: hidden;
+    transition: all 0.3s; cursor: pointer;
+    border: 1px solid rgba(46,90,74,0.06);
+  }
+  .therapist-card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(0,0,0,0.1); }
+  .therapist-img {
+    width: 100%; aspect-ratio: 1/1; object-fit: cover;
+    background: var(--green-pale);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .therapist-img svg { width: 60%; height: 60%; opacity: 0.4; }
+  .therapist-info { padding: 24px; }
+  .therapist-badge {
+    display: inline-block; background: var(--green-pale); color: var(--green);
+    font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .therapist-name { font-family: var(--serif); font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+  .therapist-title { font-size: 12px; color: var(--coral); font-weight: 600; margin-bottom: 8px; letter-spacing: 0.03em; }
+  .therapist-quote { font-size: 13px; color: var(--text-mid); line-height: 1.7; font-style: italic; }
+  .therapist-specs { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; }
+  .therapist-spec { font-size: 12px; color: var(--text-mid); display: flex; gap: 6px; align-items: flex-start; }
+  .therapist-spec::before { content: '·'; color: var(--coral); font-weight: 700; flex-shrink: 0; }
+
+  /* ─── MEDIA ─── */
+  #media { background: white; }
+  .media-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; }
+  .media-featured {
+    background: var(--green); border-radius: 24px; padding: 40px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    min-height: 360px; position: relative; overflow: hidden;
+  }
+  .media-featured::before {
+    content: ''; position: absolute; top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.05); border-radius: 50%;
+  }
+  .media-featured-label { font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+  .media-featured-title { font-family: var(--serif); font-size: 22px; color: white; line-height: 1.4; font-weight: 600; }
+  .media-featured-meta { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 16px; }
+  .media-logo { font-size: 28px; }
+
+  .media-list { display: flex; flex-direction: column; gap: 16px; }
+  .media-item {
+    display: flex; gap: 16px; align-items: center;
+    padding: 20px; background: var(--beige); border-radius: 16px;
+    transition: all 0.2s; cursor: pointer;
+  }
+  .media-item:hover { background: var(--green-pale); transform: translateX(4px); }
+  .media-item-icon {
+    width: 48px; height: 48px; background: white; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .media-item-content { flex: 1; }
+  .media-item-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .media-item-meta { font-size: 12px; color: var(--text-light); }
+  .media-channel { font-size: 12px; color: var(--coral); font-weight: 600; }
+
+  /* ─── CONTACT / MAP ─── */
+  #contact { background: var(--beige); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+
+  .contact-form-wrap { }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 14px 16px; background: white;
+    border: 1.5px solid rgba(46,90,74,0.15); border-radius: 12px;
+    font-size: 14px; font-family: var(--sans); color: var(--text);
+    transition: border-color 0.2s; outline: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--green);
+  }
+  .form-group textarea { height: 100px; resize: vertical; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .btn-submit {
+    width: 100%; padding: 16px; background: var(--green); color: white;
+    border: none; border-radius: 14px; font-size: 16px; font-weight: 600;
+    font-family: var(--sans); cursor: pointer; transition: all 0.25s;
+    margin-top: 8px;
+  }
+  .btn-submit:hover { background: var(--green-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(46,90,74,0.3); }
+
+  .contact-info { }
+  .contact-info h3 { font-family: var(--serif); font-size: 26px; margin-bottom: 8px; }
+  .contact-info > p { font-size: 14px; color: var(--text-mid); margin-bottom: 28px; line-height: 1.7; }
+  .info-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    margin-bottom: 20px; padding: 18px 20px; background: white; border-radius: 14px;
+  }
+  .info-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+  .info-label { font-size: 11px; font-weight: 600; color: var(--text-light); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 4px; }
+  .info-value { font-size: 14px; color: var(--text); font-weight: 500; }
+  .info-note { font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+  .map-placeholder {
+    width: 100%; height: 200px; background: var(--green-pale);
+    border-radius: 16px; margin-top: 24px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; position: relative;
+    border: 2px dashed rgba(46,90,74,0.2);
+  }
+  .map-placeholder-text { font-size: 13px; color: var(--green); font-weight: 600; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--text); color: rgba(255,255,255,0.6);
+    padding: 60px 40px 40px;
+  }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto 40px; }
+  .footer-brand .name { font-family: var(--serif); font-size: 18px; color: white; font-weight: 700; margin-bottom: 8px; }
+  .footer-brand p { font-size: 13px; line-height: 1.7; }
+  .footer-col h4 { font-size: 13px; font-weight: 700; color: white; margin-bottom: 14px; letter-spacing: 0.05em; }
+  .footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+  .footer-col a:hover { color: rgba(255,255,255,0.9); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  .footer-bottom p { font-size: 12px; }
+
+  /* ─── FLOATING CTA ─── */
+  .floating-cta {
+    position: fixed; bottom: 32px; right: 32px; z-index: 999;
+    background: var(--coral); color: white;
+    padding: 16px 24px; border-radius: 32px;
+    font-size: 14px; font-weight: 700; text-decoration: none;
+    box-shadow: 0 8px 32px rgba(212,115,90,0.5);
+    transition: all 0.3s; display: flex; align-items: center; gap: 8px;
+    animation: floatPulse 3s ease-in-out infinite;
+  }
+  .floating-cta:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 12px 40px rgba(212,115,90,0.6); }
+  @keyframes floatPulse {
+    0%, 100% { box-shadow: 0 8px 32px rgba(212,115,90,0.5); }
+    50% { box-shadow: 0 8px 40px rgba(212,115,90,0.7); }
+  }
+
+  /* ─── ANIMATIONS ─── */
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .stagger-1 { transition-delay: 0.1s; }
+  .stagger-2 { transition-delay: 0.2s; }
+  .stagger-3 { transition-delay: 0.3s; }
+  .stagger-4 { transition-delay: 0.4s; }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 1024px) {
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .programs-grid { grid-template-columns: repeat(2, 1fr); }
+    .therapists-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-menu { display: none; }
+    .hamburger { display: flex; }
+    section { padding: 70px 20px; }
+    .hero-content { padding: 0 24px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-image-stack { display: none; }
+    .why-grid { grid-template-columns: 1fr; }
+    .programs-grid { grid-template-columns: 1fr; }
+    .therapists-grid { grid-template-columns: 1fr; }
+    .media-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .carousel-stats { display: none; }
+    .carousel-dots { left: 24px; bottom: 24px; }
+    .floating-cta { bottom: 20px; right: 20px; padding: 14px 20px; font-size: 13px; }
+  }
+
+  /* mobile nav overlay */
+  .mobile-nav {
+    display: none; position: fixed; inset: 0; z-index: 999;
+    background: white; flex-direction: column;
+    padding: 100px 32px 40px;
+    overflow-y: auto;
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a {
+    display: block; padding: 16px 0;
+    font-size: 18px; font-weight: 500; color: var(--text);
+    text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .mobile-nav-close {
+    position: absolute; top: 20px; right: 20px;
+    font-size: 28px; cursor: pointer; color: var(--text);
+    background: none; border: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="mainNav">
+  <a href="#home" class="nav-logo">
+    <div class="nav-logo-icon">🌱</div>
+    <div class="nav-logo-text">
+      <span class="main">한국아동상담센터</span>
+      <span class="sub">Korea Child Counseling Center</span>
+    </div>
+  </a>
+  <ul class="nav-menu">
+    <li><a href="#home">홈</a></li>
+    <li><a href="#about">기관소개</a></li>
+    <li>
+      <a href="#programs">치료프로그램 ▾</a>
+      <div class="dropdown">
+        <a href="#programs">아동청소년 클리닉</a>
+        <a href="#programs">평가 및 상담클리닉</a>
+      </div>
+    </li>
+    <li><a href="#therapists">치료사 소개</a></li>
+    <li><a href="#media">방송 및 보도자료</a></li>
+    <li><a href="#contact" class="nav-cta">상담신청</a></li>
+  </ul>
+  <div class="hamburger" id="menuBtn">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="menuClose">✕</button>
+  <a href="#home" onclick="closeMobileNav()">홈</a>
+  <a href="#about" onclick="closeMobileNav()">기관소개</a>
+  <a href="#programs" onclick="closeMobileNav()">아동청소년 클리닉</a>
+  <a href="#programs" onclick="closeMobileNav()">평가 및 상담클리닉</a>
+  <a href="#therapists" onclick="closeMobileNav()">치료사 소개</a>
+  <a href="#media" onclick="closeMobileNav()">방송 및 보도자료</a>
+  <a href="#contact" onclick="closeMobileNav()" style="color:var(--coral);font-weight:700;">상담신청</a>
+</div>
+
+<!-- ─── HERO ─── -->
+<section id="home" style="padding:0;">
+  <div class="carousel-track" id="carouselTrack">
+
+    <!-- Slide 1 -->
+    <div class="carousel-slide">
+      <div class="slide-scene slide-gradient-1">
+        <svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <!-- Therapy room scene -->
+          <rect x="100" y="200" width="900" height="450" rx="20" fill="rgba(255,255,255,0.04)"/>
+          <!-- window -->
+          <rect x="700" y="240" width="240" height="300" rx="8" fill="rgba(255,255,255,0.06)"/>
+          <line x1="820" y1="240" x2="820" y2="540" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+          <line x1="700" y1="390" x2="940" y2="390" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+          <!-- plants -->
+          <ellipse cx="960" cy="560" rx="40" ry="20" fill="rgba(100,200,140,0.15)"/>
+          <line x1="960" y1="560" x2="960" y2="480" stroke="rgba(100,200,140,0.2)" stroke-width="3"/>
+          <ellipse cx="960" cy="490" rx="30" ry="40" fill="rgba(100,200,140,0.12)" transform="rotate(-15 960 490)"/>
+          <!-- toys on floor -->
+          <circle cx="400" cy="580" r="20" fill="rgba(255,180,120,0.2)"/>
+          <rect x="430" y="560" width="40" height="30" rx="5" fill="rgba(180,220,255,0.15)"/>
+          <circle cx="500" cy="590" r="12" fill="rgba(255,150,150,0.2)"/>
+          <!-- therapist silhouette -->
+          <ellipse cx="550" cy="380" rx="35" ry="45" fill="rgba(255,255,255,0.07)"/>
+          <circle cx="550" cy="320" r="28" fill="rgba(255,255,255,0.07)"/>
+          <!-- child silhouette -->
+          <ellipse cx="650" cy="420" rx="25" ry="30" fill="rgba(255,255,255,0.06)"/>
+          <circle cx="650" cy="380" r="20" fill="rgba(255,255,255,0.06)"/>
+        </svg>
+      </div>
+      <div class="carousel-overlay"></div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-slide">
+      <div class="slide-scene slide-gradient-2">
+        <svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <!-- Sensory room -->
+          <rect x="0" y="0" width="1200" height="700" fill="rgba(0,0,0,0)"/>
+          <!-- large swing -->
+          <line x1="500" y1="100" x2="430" y2="350" stroke="rgba(255,255,255,0.12)" stroke-width="3"/>
+          <line x1="560" y1="100" x2="620" y2="350" stroke="rgba(255,255,255,0.12)" stroke-width="3"/>
+          <ellipse cx="525" cy="365" rx="100" ry="30" fill="rgba(255,255,255,0.08)"/>
+          <!-- child on swing -->
+          <circle cx="525" cy="330" r="22" fill="rgba(255,255,255,0.07)"/>
+          <!-- foam blocks -->
+          <rect x="200" y="480" width="80" height="60" rx="10" fill="rgba(255,180,100,0.15)"/>
+          <rect x="295" y="490" width="60" height="50" rx="8" fill="rgba(120,200,160,0.15)"/>
+          <rect x="160" y="510" width="50" height="30" rx="6" fill="rgba(180,160,255,0.12)"/>
+          <!-- balance board -->
+          <ellipse cx="850" cy="580" rx="80" ry="10" fill="rgba(255,255,255,0.08)"/>
+          <rect x="830" y="540" width="40" height="40" rx="6" fill="rgba(255,255,255,0.06)"/>
+          <!-- dots pattern -->
+          <circle cx="900" cy="200" r="60" fill="rgba(255,255,255,0.03)"/>
+          <circle cx="950" cy="250" r="40" fill="rgba(255,255,255,0.03)"/>
+          <circle cx="880" cy="270" r="25" fill="rgba(255,255,255,0.04)"/>
+        </svg>
+      </div>
+      <div class="carousel-overlay"></div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-slide">
+      <div class="slide-scene slide-gradient-3">
+        <svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+          <!-- Art therapy / creative room -->
+          <!-- Table -->
+          <rect x="300" y="380" width="500" height="20" rx="4" fill="rgba(255,255,255,0.08)"/>
+          <rect x="330" y="400" width="15" height="180" rx="4" fill="rgba(255,255,255,0.05)"/>
+          <rect x="760" y="400" width="15" height="180" rx="4" fill="rgba(255,255,255,0.05)"/>
+          <!-- art supplies on table -->
+          <rect x="380" y="340" width="8" height="50" rx="4" fill="rgba(255,120,120,0.25)"/>
+          <rect x="400" y="345" width="8" height="45" rx="4" fill="rgba(120,200,120,0.25)"/>
+          <rect x="420" y="338" width="8" height="52" rx="4" fill="rgba(120,120,255,0.25)"/>
+          <!-- paper circles / drawings -->
+          <circle cx="520" cy="370" r="30" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+          <circle cx="590" cy="360" r="24" fill="rgba(255,220,100,0.08)"/>
+          <!-- children silhouettes seated -->
+          <ellipse cx="450" cy="340" rx="22" ry="28" fill="rgba(255,255,255,0.07)"/>
+          <circle cx="450" cy="302" r="18" fill="rgba(255,255,255,0.07)"/>
+          <ellipse cx="660" cy="340" rx="22" ry="28" fill="rgba(255,255,255,0.06)"/>
+          <circle cx="660" cy="302" r="18" fill="rgba(255,255,255,0.06)"/>
+          <!-- therapist standing -->
+          <ellipse cx="760" cy="310" rx="30" ry="42" fill="rgba(255,255,255,0.07)"/>
+          <circle cx="760" cy="258" r="26" fill="rgba(255,255,255,0.07)"/>
+          <!-- warm light circles -->
+          <circle cx="150" cy="150" r="120" fill="rgba(255,200,120,0.05)"/>
+          <circle cx="1050" cy="500" r="100" fill="rgba(100,200,180,0.05)"/>
+        </svg>
+      </div>
+      <div class="carousel-overlay"></div>
+    </div>
+
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge fade-in">1996년 설립 · 강남 소재 · 30년 임상 경험</div>
+    <h1 class="hero-title fade-in stagger-1">
+      <em>30년의 통찰,</em><br>수만 시간의 임상이<br>증명하는 변화
+    </h1>
+    <p class="hero-sub fade-in stagger-2">
+      아이와 가족의 내일을 만드는<br>한국아동상담센터가 함께합니다.
+    </p>
+    <div class="hero-buttons fade-in stagger-3">
+      <a href="#contact" class="btn-primary">📋 지금 상담 신청하기</a>
+      <a href="#about" class="btn-secondary">센터 소개 보기</a>
+    </div>
+  </div>
+
+  <div class="carousel-dots" id="carouselDots">
+    <div class="carousel-dot active" onclick="goToSlide(0)"></div>
+    <div class="carousel-dot" onclick="goToSlide(1)"></div>
+    <div class="carousel-dot" onclick="goToSlide(2)"></div>
+  </div>
+
+  <div class="carousel-stats">
+    <div class="stat-item">
+      <span class="stat-num">30+</span>
+      <span class="stat-label">년 임상 경험</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">6</span>
+      <span class="stat-label">명 전문 치료사</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">수만</span>
+      <span class="stat-label">시간의 상담 기록</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY US ─── -->
+<section id="why">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label fade-in">우리가 특별한 이유</p>
+      <h2 class="section-title fade-in stagger-1">아이 한 명 한 명을 위한<br>깊이 있는 전문 치료</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-in stagger-1">
+        <div class="why-num">01</div>
+        <div class="why-icon">🌿</div>
+        <h3>30년 임상의 깊이</h3>
+        <p>1991년 소아정신과 임상 실무를 시작으로, 1996년 센터 설립 이래 수만 시간의 상담 경험을 축적해 왔습니다.</p>
+      </div>
+      <div class="why-card fade-in stagger-2">
+        <div class="why-num">02</div>
+        <div class="why-icon">🔬</div>
+        <h3>다학문적 통합 치료</h3>
+        <p>놀이치료, 감각통합치료, 언어치료, 학습치료, 작업치료까지 각 분야 전문가들이 유기적으로 협력합니다.</p>
+      </div>
+      <div class="why-card fade-in stagger-3">
+        <div class="why-num">03</div>
+        <div class="why-icon">📚</div>
+        <h3>경계성 지능 선구자</h3>
+        <p>2008년, 국내 최초로 경계성 지능군 특성을 분석한 박사논문 발표. 이 분야의 사회적 인식을 이끌어왔습니다.</p>
+      </div>
+      <div class="why-card fade-in stagger-4">
+        <div class="why-num">04</div>
+        <div class="why-icon">💚</div>
+        <h3>가족 중심 치료</h3>
+        <p>아이 혼자가 아닌, 가족 전체의 변화와 성장을 함께 도모합니다. 부모 상담과 가족치료를 통합적으로 제공합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Image stack -->
+      <div class="about-image-stack fade-in">
+        <div class="img-placeholder" style="width:100%;aspect-ratio:4/5;">
+          <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="400" height="500" fill="#e8f0ed"/>
+            <!-- Warm therapy room illustration -->
+            <rect x="40" y="160" width="320" height="300" rx="12" fill="#d4e8df"/>
+            <!-- window with light -->
+            <rect x="280" y="180" width="60" height="80" rx="4" fill="#b8d8cb"/>
+            <rect x="288" y="180" width="2" height="80" fill="rgba(255,255,255,0.4)"/>
+            <rect x="280" y="220" width="60" height="2" fill="rgba(255,255,255,0.4)"/>
+            <!-- bookshelf -->
+            <rect x="50" y="200" width="80" height="120" rx="4" fill="#c4d8cf"/>
+            <rect x="58" y="210" width="14" height="40" rx="2" fill="#2E5A4A" opacity="0.4"/>
+            <rect x="75" y="215" width="10" height="35" rx="2" fill="#D4735A" opacity="0.5"/>
+            <rect x="88" y="208" width="12" height="42" rx="2" fill="#2E5A4A" opacity="0.3"/>
+            <!-- plant -->
+            <ellipse cx="340" cy="450" rx="30" ry="14" fill="#b8d8cb"/>
+            <line x1="340" y1="450" x2="340" y2="390" stroke="#2E5A4A" stroke-width="3" opacity="0.4"/>
+            <ellipse cx="330" cy="400" rx="20" ry="28" fill="#a8ccbf" opacity="0.7" transform="rotate(-10 330 400)"/>
+            <ellipse cx="350" cy="395" rx="18" ry="24" fill="#b4d4c7" opacity="0.6" transform="rotate(15 350 395)"/>
+            <!-- therapist + child figures -->
+            <circle cx="180" cy="310" r="26" fill="#2E5A4A" opacity="0.18"/>
+            <ellipse cx="180" cy="355" rx="32" ry="38" fill="#2E5A4A" opacity="0.14"/>
+            <circle cx="240" cy="330" r="20" fill="#D4735A" opacity="0.2"/>
+            <ellipse cx="240" cy="368" rx="24" ry="30" fill="#D4735A" opacity="0.15"/>
+            <!-- text overlay area -->
+            <rect x="40" y="30" width="320" height="120" rx="12" fill="white" opacity="0.8"/>
+            <rect x="60" y="55" width="120" height="4" rx="2" fill="#2E5A4A" opacity="0.4"/>
+            <rect x="60" y="70" width="200" height="3" rx="2" fill="#2E5A4A" opacity="0.2"/>
+            <rect x="60" y="82" width="170" height="3" rx="2" fill="#2E5A4A" opacity="0.2"/>
+            <rect x="60" y="94" width="190" height="3" rx="2" fill="#2E5A4A" opacity="0.2"/>
+            <circle cx="310" cy="90" r="30" fill="#2E5A4A" opacity="0.12"/>
+            <text x="310" y="97" text-anchor="middle" fill="#2E5A4A" font-size="22" font-weight="bold" opacity="0.6">30</text>
+            <text x="310" y="110" text-anchor="middle" fill="#2E5A4A" font-size="9" opacity="0.5">YEARS</text>
+          </svg>
+        </div>
+        <div class="about-badge-float">
+          <span class="num">1996</span>
+          <span class="txt">년 설립</span>
+        </div>
+        <div class="img-placeholder about-img-accent" style="aspect-ratio:1/1; border-radius:20px; border:6px solid white; box-shadow:0 12px 32px rgba(0,0,0,0.12); position:absolute; bottom:-30px; right:-30px; width:55%;">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="200" height="200" fill="#f0f7f4"/>
+            <circle cx="80" cy="90" r="25" fill="#2E5A4A" opacity="0.15"/>
+            <ellipse cx="80" cy="128" rx="30" ry="36" fill="#2E5A4A" opacity="0.1"/>
+            <circle cx="130" cy="100" r="18" fill="#D4735A" opacity="0.18"/>
+            <ellipse cx="130" cy="132" rx="22" ry="28" fill="#D4735A" opacity="0.12"/>
+            <!-- speech bubble -->
+            <rect x="90" y="55" width="80" height="36" rx="10" fill="white" opacity="0.9"/>
+            <polygon points="100,91 110,91 105,101" fill="white" opacity="0.9"/>
+            <rect x="98" y="64" width="55" height="3" rx="2" fill="#2E5A4A" opacity="0.3"/>
+            <rect x="98" y="72" width="40" height="3" rx="2" fill="#2E5A4A" opacity="0.2"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="fade-in stagger-2">
+        <p class="section-label">기관소개</p>
+        <h2 class="section-title">대한민국 아동상담의<br>역사를 함께해 온 곳</h2>
+
+        <p style="font-size:15px;color:var(--text-mid);line-height:1.85;margin:20px 0;">
+          한국아동상담센터의 상담가들은 <strong>1991년 소아정신과</strong>에서의 임상 실무와 전문적 수련을 시작으로,
+          <strong>1996년 본 센터 설립 이래</strong> 국내 최고 수준의 경력을 갖춘 석·박사 출신의 치료 전문가들이 모여
+          아이들의 전인적 성장을 돕는 다학문적 접근을 실천해 왔습니다.
+        </p>
+        <p style="font-size:15px;color:var(--text-mid);line-height:1.85;margin-bottom:24px;">
+          저희는 지난 30여 년간 수만 시간의 아동 및 부모님과의 상담을 통하여,
+          <strong>건강하고 행복한 영유아기와 아동기가 삶 전체의 뿌리</strong>가 된다는 사실을 매 순간 확인하고 있습니다.
+        </p>
+
+        <div class="about-points">
+          <div class="about-point">
+            <span class="point-icon">🧤</span>
+            <div>
+              <h4>다학문적 통합 치료의 중심</h4>
+              <p>놀이치료, 청소년 상담, 감각통합치료, 언어치료, 학습치료, 부모 상담 및 가족치료를 시행하며 국내 대표적인 다학문적 상담 센터로 자리매김해 왔습니다.</p>
+            </div>
+          </div>
+          <div class="about-point">
+            <span class="point-icon">🧤</span>
+            <div>
+              <h4>국내 경계선 지능군 지원의 선구자</h4>
+              <p>2008년, 정희정 소장은 국내 최초로 경계성 지능군의 특성을 분석한 박사 논문을 발표하며 사각지대 아이들의 권익 향상에 매진하고 있습니다.</p>
+            </div>
+          </div>
+          <div class="about-point">
+            <span class="point-icon">🧤</span>
+            <div>
+              <h4>행복한 가족, 건강한 사회를 향한 약속</h4>
+              <p>모든 치료는 아이 한 명 한 명의 고유한 특성을 존중하며, 가족 전체의 회복과 성장을 함께 도모합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROGRAMS ─── -->
+<section id="programs">
+  <div class="container">
+    <div class="section-header" style="display:flex;justify-content:space-between;align-items:flex-end;">
+      <div>
+        <p class="section-label fade-in">치료프로그램</p>
+        <h2 class="section-title fade-in stagger-1" style="color:white;">아이의 필요에 맞는<br>전문 치료 프로그램</h2>
+      </div>
+      <div style="display:flex;gap:8px;">
+        <button class="prog-tab active" onclick="switchTab(this,'clinic')" style="background:rgba(255,255,255,0.15);color:white;border:1px solid rgba(255,255,255,0.3);padding:10px 20px;border-radius:20px;font-size:13px;cursor:pointer;font-family:var(--sans);transition:all 0.2s;">아동청소년 클리닉</button>
+        <button class="prog-tab" onclick="switchTab(this,'evaluation')" style="background:transparent;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.15);padding:10px 20px;border-radius:20px;font-size:13px;cursor:pointer;font-family:var(--sans);transition:all 0.2s;">평가 및 상담클리닉</button>
+      </div>
+    </div>
+
+    <!-- 아동청소년 클리닉 -->
+    <div class="programs-grid" id="tab-clinic">
+      <div class="program-card fade-in stagger-1">
+        <span class="icon">🎮</span>
+        <h3>놀이치료</h3>
+        <p>아이의 자연스러운 놀이를 통해 정서적 갈등을 해소하고 건강한 발달을 촉진합니다.</p>
+        <div class="program-tags">
+          <span class="program-tag">정서문제</span>
+          <span class="program-tag">관계어려움</span>
+          <span class="program-tag">불안·우울</span>
+        </div>
+      </div>
+      <div class="program-card fade-in stagger-2">
+        <span class="icon">🗣️</span>
+        <h3>언어치료</h3>
+        <p>놀이 기반 상호작용 언어치료로 언어 발달 지연 및 의사소통 문제를 전문적으로 치료합니다.</p>
+        <div class="program-tags">
+          <span class="program-tag">언어발달지연</span>
+          <span class="program-tag">조음장애</span>
+          <span class="program-tag">의사소통</span>
+        </div>
+      </div>
+      <div class="program-card fade-in stagger-3">
+        <span class="icon">🔄</span>
+        <h3>감각통합치료</h3>
+        <p>감각 처리 어려움을 가진 아이들을 위한 전문 감각통합 치료. 일상생활 적응 능력을 키웁니다.</p>
+        <div class="program-tags">
+          <span class="program-tag">감각과민</span>
+          <span class="program-tag">감각추구</span>
+          <span class="program-tag">운동협응</span>
+        </div>
+      </div>
+      <div class="program-card fade-in stagger-1">
+        <span class="icon">✏️</span>
+        <h3>학습치료</h3>
+        <p>학습에 어려움을 겪는 아이들의 인지 능력과 학습 동기를 향상시킵니다.</p>
+        <div class="program-tags">
+          <span class="program-tag">학습부진</span>
+          <span class="program-tag">집중력</span>
+          <span class="program-tag">ADHD</span>
+        </div>
+      </div>
+      <div class="program-card fade-in stagger-2">
+        <span class="icon">🤸</span>
+        <h3>작업치료</h3>
+        <p>일상생활 활동과 학교 활동에서의 수행 능력 향상을 위한 작업치료를 제공합니다.</p>
+        <div class="program-tags">
+          <span class="program-tag">소근육</span>
+          <span class="program-tag">협응능력</span>
+          <span class="program-tag">일상수행</span>
+        </div>
+      </div>
+      <div class="program-card fade-in stagger-3">
+        <span class="icon">👨‍👩‍👧</span>
+        <h3>부모·가족 상담</h3>
+        <p>아이의 치료와 함께 부모 상담과 가족치료로 가정 환경 전체의 변화를 만들어갑니다.</p>
+        <div class="program-tags">
+          <span class="program-tag">양육 코칭</span>
+          <span class="program-tag">가족치료</span>
+          <span class="program-tag">부모 교육</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 평가 및 상담클리닉 (hidden by default) -->
+    <div class="programs-grid" id="tab-evaluation" style="display:none;">
+      <div class="program-card">
+        <span class="icon">🧪</span>
+        <h3>심리검사 및 평가</h3>
+        <p>종합심리검사, 지능검사, 발달검사를 통해 아이의 강점과 어려움을 정확히 파악합니다.</p>
+        <div class="program-tags">
+          <span class="program-tag">지능검사</span>
+          <span class="program-tag">종합심리검사</span>
+          <span class="program-tag">정서평가</span>
+        </div>
+      </div>
+      <div class="program-card">
+        <span class="icon">🌱</span>
+        <h3>발달평가</h3>
+        <p>덴버 발달검사, 게젤 발달척도, 사회성숙도검사, 감각처리능력(K-SP)을 통한 전반적 발달 평가.</p>
+        <div class="program-tags">
+          <span class="program-tag">덴버</span>
+          <span class="program-tag">게젤</span>
+          <span class="program-tag">K-SP</span>
+        </div>
+      </div>
+      <div class="program-card">
+        <span class="icon">🎯</span>
+        <h3>경계성 지능 클리닉</h3>
+        <p>국내 선구자로서 30년 경험을 바탕으로 경계성 지능 아동을 위한 전문 평가와 맞춤 치료를 제공합니다.</p>
+        <div class="program-tags">
+          <span class="program-tag">경계성 지능</span>
+          <span class="program-tag">학습지원</span>
+          <span class="program-tag">사회성</span>
+        </div>
+      </div>
+      <div class="program-card">
+        <span class="icon">🤲</span>
+        <h3>발달성 협응장애 (DCD)</h3>
+        <p>운동 협응 능력에 어려움을 보이는 아이들을 위한 전문 평가 및 작업치료·감각통합 치료 프로그램.</p>
+        <div class="program-tags">
+          <span class="program-tag">DCD</span>
+          <span class="program-tag">운동협응</span>
+          <span class="program-tag">작업치료</span>
+        </div>
+      </div>
+      <div class="program-card">
+        <span class="icon">👂</span>
+        <h3>감각통합 평가</h3>
+        <p>신체·운동 / 감각·반응 / 적응·정서 / 발달·수행 / 일상생활 전 영역에 걸친 감각통합 종합 평가.</p>
+        <div class="program-tags">
+          <span class="program-tag">감각처리</span>
+          <span class="program-tag">운동발달</span>
+          <span class="program-tag">일상적응</span>
+        </div>
+      </div>
+      <div class="program-card">
+        <span class="icon">💬</span>
+        <h3>청소년 상담</h3>
+        <p>학교 부적응, 대인관계 어려움, 진로 고민 등 청소년의 복잡한 심리적 어려움을 전문적으로 지원합니다.</p>
+        <div class="program-tags">
+          <span class="program-tag">학교부적응</span>
+          <span class="program-tag">대인관계</span>
+          <span class="program-tag">진로</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── THERAPISTS ─── -->
+<section id="therapists">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label fade-in">치료사 소개</p>
+      <h2 class="section-title fade-in stagger-1">30년을 함께한<br>전문가들을 소개합니다</h2>
+    </div>
+    <div class="therapists-grid">
+
+      <!-- 정희정 소장 -->
+      <div class="therapist-card fade-in stagger-1">
+        <div class="therapist-img">
+          <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;opacity:1;">
+            <rect width="280" height="280" fill="#d8ece4"/>
+            <circle cx="140" cy="100" r="52" fill="#2E5A4A" opacity="0.22"/>
+            <ellipse cx="140" cy="210" rx="72" ry="80" fill="#2E5A4A" opacity="0.15"/>
+            <!-- professional attire hint -->
+            <rect x="90" y="170" width="100" height="60" rx="8" fill="#2E5A4A" opacity="0.12"/>
+            <circle cx="140" cy="98" r="46" fill="#c4dbd2"/>
+            <!-- face features -->
+            <circle cx="125" cy="92" r="4" fill="#2E5A4A" opacity="0.3"/>
+            <circle cx="155" cy="92" r="4" fill="#2E5A4A" opacity="0.3"/>
+            <path d="M 128 112 Q 140 122 152 112" stroke="#2E5A4A" stroke-width="2.5" fill="none" opacity="0.3" stroke-linecap="round"/>
+            <!-- hair -->
+            <path d="M 94 90 Q 94 44 140 44 Q 186 44 186 90" fill="#2E5A4A" opacity="0.18"/>
+          </svg>
+        </div>
+        <div class="therapist-info">
+          <span class="therapist-badge">소장</span>
+          <div class="therapist-name">정희정</div>
+          <div class="therapist-title">박사 · 교수 · 경계성 지능 국내 최초 연구자</div>
+          <p class="therapist-quote">"30년 임상의 깊이, 수만시간의 기록 — 놀이치료의 차이는 여기서 시작됩니다."</p>
+          <div class="therapist-specs">
+            <span class="therapist-spec">숙명여대 박사 (경계성 지적 기능 아동 특성, 국내 최초)</span>
+            <span class="therapist-spec">국회·언론·교사 연수 강의 다수</span>
+            <span class="therapist-spec">EBS·SBS·KBS·MBC 다수 출연</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 김수희 -->
+      <div class="therapist-card fade-in stagger-2">
+        <div class="therapist-img">
+          <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="280" height="280" fill="#f0ebe3"/>
+            <circle cx="140" cy="210" r="80" fill="#D4735A" opacity="0.1"/>
+            <circle cx="140" cy="98" r="46" fill="#e8d8d0"/>
+            <circle cx="125" cy="92" r="4" fill="#7a3a2a" opacity="0.25"/>
+            <circle cx="155" cy="92" r="4" fill="#7a3a2a" opacity="0.25"/>
+            <path d="M 128 112 Q 140 122 152 112" stroke="#7a3a2a" stroke-width="2.5" fill="none" opacity="0.25" stroke-linecap="round"/>
+            <path d="M 94 80 Q 100 44 140 44 Q 180 44 186 80" fill="#7a3a2a" opacity="0.15"/>
+            <ellipse cx="140" cy="210" rx="72" ry="80" fill="#D4735A" opacity="0.1"/>
+            <rect x="90" y="170" width="100" height="60" rx="8" fill="#D4735A" opacity="0.1"/>
+          </svg>
+        </div>
+        <div class="therapist-info">
+          <span class="therapist-badge">상담심리전문가</span>
+          <div class="therapist-name">김수희</div>
+          <div class="therapist-title">한국심리학회 공인 상담심리전문가</div>
+          <p class="therapist-quote">"아이의 마음속 언어를 듣는 데 30년을 헌신해 왔습니다."</p>
+          <div class="therapist-specs">
+            <span class="therapist-spec">한국심리학회 공인 상담심리전문가</span>
+            <span class="therapist-spec">아동·청소년 심리치료 전문</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 김성은 -->
+      <div class="therapist-card fade-in stagger-3">
+        <div class="therapist-img">
+          <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="280" height="280" fill="#eef4f0"/>
+            <circle cx="140" cy="98" r="46" fill="#cce0d4"/>
+            <circle cx="125" cy="92" r="4" fill="#2E5A4A" opacity="0.28"/>
+            <circle cx="155" cy="92" r="4" fill="#2E5A4A" opacity="0.28"/>
+            <path d="M 128 112 Q 140 122 152 112" stroke="#2E5A4A" stroke-width="2.5" fill="none" opacity="0.28" stroke-linecap="round"/>
+            <path d="M 94 86 Q 90 44 140 44 Q 188 44 184 80" fill="#2E5A4A" opacity="0.15"/>
+            <ellipse cx="140" cy="210" rx="72" ry="80" fill="#2E5A4A" opacity="0.1"/>
+            <!-- books (symbolic) -->
+            <rect x="60" y="210" width="16" height="50" rx="3" fill="#2E5A4A" opacity="0.2"/>
+            <rect x="79" y="215" width="12" height="45" rx="3" fill="#D4735A" opacity="0.2"/>
+            <rect x="94" y="208" width="14" height="52" rx="3" fill="#2E5A4A" opacity="0.15"/>
+          </svg>
+        </div>
+        <div class="therapist-info">
+          <span class="therapist-badge">부모상담전문가</span>
+          <div class="therapist-name">김성은</div>
+          <div class="therapist-title">7권의 양육 저서로 증명된 독보적인 부모 상담 전문가</div>
+          <p class="therapist-quote">"부모가 변화할 때, 아이의 세상이 달라집니다."</p>
+          <div class="therapist-specs">
+            <span class="therapist-spec">양육 관련 저서 7권 출판</span>
+            <span class="therapist-spec">EBS 생방송 60분 부모 출연</span>
+            <span class="therapist-spec">부모 상담 및 가족치료 전문</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 구민경 -->
+      <div class="therapist-card fade-in stagger-1">
+        <div class="therapist-img">
+          <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="280" height="280" fill="#e8f4ee"/>
+            <circle cx="140" cy="98" r="46" fill="#c4daca"/>
+            <circle cx="125" cy="92" r="4" fill="#1a4a3a" opacity="0.28"/>
+            <circle cx="155" cy="92" r="4" fill="#1a4a3a" opacity="0.28"/>
+            <path d="M 128 112 Q 140 122 152 112" stroke="#1a4a3a" stroke-width="2.5" fill="none" opacity="0.28" stroke-linecap="round"/>
+            <path d="M 100 76 Q 104 44 140 44 Q 176 44 180 76" fill="#1a4a3a" opacity="0.15"/>
+            <ellipse cx="140" cy="210" rx="72" ry="80" fill="#1a4a3a" opacity="0.08"/>
+            <!-- swing / sensory symbol -->
+            <circle cx="200" cy="200" r="28" fill="none" stroke="#2E5A4A" stroke-width="2" opacity="0.2"/>
+            <path d="M 184 200 Q 200 185 216 200" stroke="#2E5A4A" stroke-width="2" fill="none" opacity="0.2"/>
+          </svg>
+        </div>
+        <div class="therapist-info">
+          <span class="therapist-badge">감각통합 전문가</span>
+          <div class="therapist-name">구민경</div>
+          <div class="therapist-title">30년 경력, 국내 최고 수준의 감각통합 치료 전문가</div>
+          <p class="therapist-quote">"몸으로 느끼는 감각이 아이의 세상을 열어줍니다."</p>
+          <div class="therapist-specs">
+            <span class="therapist-spec">감각통합치료 30년 임상 경력</span>
+            <span class="therapist-spec">발달성 협응장애(DCD) 전문</span>
+            <span class="therapist-spec">작업치료 통합 접근</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 유혜경 -->
+      <div class="therapist-card fade-in stagger-2">
+        <div class="therapist-img">
+          <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="280" height="280" fill="#faf0ec"/>
+            <circle cx="140" cy="98" r="46" fill="#e8ccc4"/>
+            <circle cx="125" cy="92" r="4" fill="#6a2a1a" opacity="0.25"/>
+            <circle cx="155" cy="92" r="4" fill="#6a2a1a" opacity="0.25"/>
+            <path d="M 128 112 Q 140 122 152 112" stroke="#6a2a1a" stroke-width="2.5" fill="none" opacity="0.25" stroke-linecap="round"/>
+            <path d="M 96 82 Q 96 44 140 44 Q 184 44 184 82" fill="#6a2a1a" opacity="0.13"/>
+            <ellipse cx="140" cy="210" rx="72" ry="80" fill="#D4735A" opacity="0.08"/>
+            <!-- speech bubble symbol -->
+            <rect x="64" y="196" width="44" height="32" rx="8" fill="#D4735A" opacity="0.15"/>
+            <polygon points="70,228 80,228 75,240" fill="#D4735A" opacity="0.15"/>
+          </svg>
+        </div>
+        <div class="therapist-info">
+          <span class="therapist-badge">언어치료 전문가</span>
+          <div class="therapist-name">유혜경</div>
+          <div class="therapist-title">놀이 기반 상호작용 언어치료의 독보적 전문가</div>
+          <p class="therapist-quote">"아이의 말 한마디가 시작될 때, 그 순간을 함께합니다."</p>
+          <div class="therapist-specs">
+            <span class="therapist-spec">언어발달장애 · 조음장애 전문</span>
+            <span class="therapist-spec">놀이 기반 상호작용 언어치료</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 임양화 -->
+      <div class="therapist-card fade-in stagger-3">
+        <div class="therapist-img">
+          <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+            <rect width="280" height="280" fill="#f2eef8"/>
+            <circle cx="140" cy="98" r="46" fill="#d8d0e8"/>
+            <circle cx="125" cy="92" r="4" fill="#3a2a5a" opacity="0.25"/>
+            <circle cx="155" cy="92" r="4" fill="#3a2a5a" opacity="0.25"/>
+            <path d="M 128 112 Q 140 122 152 112" stroke="#3a2a5a" stroke-width="2.5" fill="none" opacity="0.25" stroke-linecap="round"/>
+            <path d="M 96 78 Q 100 44 140 44 Q 180 44 184 78" fill="#3a2a5a" opacity="0.13"/>
+            <ellipse cx="140" cy="210" rx="72" ry="80" fill="#3a2a5a" opacity="0.06"/>
+            <!-- chart symbol -->
+            <rect x="195" y="215" width="10" height="30" rx="2" fill="#3a2a5a" opacity="0.18"/>
+            <rect x="210" y="205" width="10" height="40" rx="2" fill="#3a2a5a" opacity="0.14"/>
+            <rect x="225" y="220" width="10" height="25" rx="2" fill="#3a2a5a" opacity="0.18"/>
+          </svg>
+        </div>
+        <div class="therapist-info">
+          <span class="therapist-badge">심리검사 전문가</span>
+          <div class="therapist-name">임양화</div>
+          <div class="therapist-title">30년 임상, 양적·질적 분석을 통합하는 심리검사 전문가</div>
+          <p class="therapist-quote">"정확한 평가가 가장 효과적인 치료의 시작입니다."</p>
+          <div class="therapist-specs">
+            <span class="therapist-spec">종합심리검사 · 지능검사 전문</span>
+            <span class="therapist-spec">30년 임상 경력의 예리한 통찰</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── MEDIA ─── -->
+<section id="media">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label fade-in">방송 및 보도자료</p>
+      <h2 class="section-title fade-in stagger-1">언론이 주목한<br>한국아동상담센터</h2>
+    </div>
+    <div class="media-grid">
+      <div class="media-featured fade-in">
+        <div>
+          <div class="media-logo">📺</div>
+          <p class="media-featured-label" style="margin-top:16px;">EBS 심층취재 · 2014</p>
+          <h3 class="media-featured-title">경계선 지능<br>"음지의 경계선 지능 — 해법은?"</h3>
+          <p class="media-featured-meta">정희정 소장 인터뷰 · 25편 시리즈</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.08);border-radius:12px;padding:16px;margin-top:20px;">
+          <p style="font-size:13px;color:rgba(255,255,255,0.75);line-height:1.7;">
+            국내 최초 경계선 지능군 연구자로서, 사각지대에 놓인 아이들의 현실을 전국에 알린 역사적인 방송입니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="media-list fade-in stagger-2">
+        <div class="media-item">
+          <div class="media-item-icon">📺</div>
+          <div class="media-item-content">
+            <div class="media-item-title">EBS 생방송 60분 부모 다수 출연</div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:4px;">
+              <span class="media-channel">EBS</span>
+              <span class="media-item-meta">정희정 소장 · 김성은 선생님</span>
+            </div>
+          </div>
+        </div>
+        <div class="media-item">
+          <div class="media-item-icon">📰</div>
+          <div class="media-item-content">
+            <div class="media-item-title">중앙일보 · 동아일보 · 조선일보 · 한겨레 인터뷰 및 기고</div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:4px;">
+              <span class="media-channel">신문</span>
+              <span class="media-item-meta">아동 정서·발달·경계성 지능 주제</span>
+            </div>
+          </div>
+        </div>
+        <div class="media-item">
+          <div class="media-item-icon">📡</div>
+          <div class="media-item-content">
+            <div class="media-item-title">SBS·KBS·MBC·YTN 뉴스·토크 프로그램 출연</div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:4px;">
+              <span class="media-channel">방송</span>
+              <span class="media-item-meta">아동 정서 발달 전문가 코멘트</span>
+            </div>
+          </div>
+        </div>
+        <div class="media-item">
+          <div class="media-item-icon">🎓</div>
+          <div class="media-item-content">
+            <div class="media-item-title">정희정 소장 박사논문 — 경계선 지적 기능 아동의 특성</div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:4px;">
+              <span class="media-channel">학술</span>
+              <span class="media-item-meta">숙명여대 · 국내 최초 연구 (2008)</span>
+            </div>
+          </div>
+        </div>
+        <div class="media-item">
+          <div class="media-item-icon">🏛️</div>
+          <div class="media-item-content">
+            <div class="media-item-title">국회·교사 연수·전문가 양성 강의</div>
+            <div style="display:flex;gap:8px;align-items:center;margin-top:4px;">
+              <span class="media-channel">강연</span>
+              <span class="media-item-meta">경계성 지능 인식 향상 및 정책 제언</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label fade-in">상담신청 · 찾아오시는 길</p>
+      <h2 class="section-title fade-in stagger-1">지금 바로<br>상담을 시작하세요</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-form-wrap fade-in stagger-1">
+        <form onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>보호자 성함 *</label>
+              <input type="text" placeholder="홍길동" required>
+            </div>
+            <div class="form-group">
+              <label>연락처 *</label>
+              <input type="tel" placeholder="010-0000-0000" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>자녀 연령</label>
+              <input type="text" placeholder="예: 만 6세">
+            </div>
+            <div class="form-group">
+              <label>희망 치료 분야</label>
+              <select>
+                <option value="">선택해주세요</option>
+                <option>놀이치료</option>
+                <option>언어치료</option>
+                <option>감각통합치료</option>
+                <option>학습치료</option>
+                <option>작업치료</option>
+                <option>심리검사 / 발달평가</option>
+                <option>경계성 지능</option>
+                <option>발달성 협응장애</option>
+                <option>부모 상담</option>
+                <option>기타 (상담 후 결정)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>증상 및 어려움 (간단히)</label>
+            <textarea placeholder="아이의 주된 어려움이나 상담을 원하시는 이유를 간단히 적어주세요."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">📋 상담 신청하기</button>
+        </form>
+        <p style="font-size:12px;color:var(--text-light);margin-top:12px;text-align:center;">
+          접수 후 1~2 영업일 이내 연락 드립니다 · 개인정보는 상담 목적으로만 활용됩니다
+        </p>
+      </div>
+
+      <div class="contact-info fade-in stagger-2">
+        <h3>찾아오시는 길</h3>
+        <p>강남구에 위치한 한국아동상담센터입니다.<br>주소 확정 후 아래 정보가 업데이트됩니다.</p>
+        <div class="info-item">
+          <span class="info-icon">📍</span>
+          <div>
+            <div class="info-label">주소</div>
+            <div class="info-value">서울특별시 강남구 (정확한 주소 업데이트 예정)</div>
+            <div class="info-note">지하철 및 버스 안내는 주소 확정 후 추가됩니다</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">📞</span>
+          <div>
+            <div class="info-label">전화 문의</div>
+            <div class="info-value">02-000-0000 (업데이트 예정)</div>
+            <div class="info-note">평일 09:00 – 18:00</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="info-icon">🚗</span>
+          <div>
+            <div class="info-label">주차</div>
+            <div class="info-value">건물 내 주차 가능 (업데이트 예정)</div>
+          </div>
+        </div>
+
+        <!-- Map placeholder -->
+        <div class="map-placeholder">
+          <div style="text-align:center;">
+            <div style="font-size:32px;margin-bottom:8px;">🗺️</div>
+            <div class="map-placeholder-text">지도 (네이버·카카오맵 임베드 예정)</div>
+            <div style="font-size:11px;color:var(--text-light);margin-top:4px;">주소 확정 후 지도가 표시됩니다</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="name">한국아동상담센터</div>
+      <p>1996년부터 아이들의 곁을 지켜온 한국아동상담센터.<br>
+      30년의 통찰, 수만 시간의 임상이 증명하는 변화.</p>
+      <p style="margin-top:16px;font-size:12px;">대표: 정희정 | 사업자등록번호: 업데이트 예정<br>
+      서울특별시 강남구 | Tel: 업데이트 예정</p>
+    </div>
+    <div class="footer-col">
+      <h4>기관</h4>
+      <a href="#about">기관소개</a>
+      <a href="#therapists">치료사 소개</a>
+      <a href="#media">방송 및 보도자료</a>
+    </div>
+    <div class="footer-col">
+      <h4>치료프로그램</h4>
+      <a href="#programs">놀이치료</a>
+      <a href="#programs">언어치료</a>
+      <a href="#programs">감각통합치료</a>
+      <a href="#programs">경계성 지능</a>
+      <a href="#programs">발달성 협응장애</a>
+    </div>
+    <div class="footer-col">
+      <h4>상담 안내</h4>
+      <a href="#contact">상담신청</a>
+      <a href="#contact">찾아오시는 길</a>
+      <a href="#">개인정보처리방침</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 한국아동상담센터. All rights reserved.</p>
+    <p style="font-size:11px;color:rgba(255,255,255,0.3);">아이들의 더 밝은 내일을 위해</p>
+  </div>
+</footer>
+
+<!-- Floating CTA -->
+<a href="#contact" class="floating-cta">📋 상담 신청</a>
+
+<script>
+  // ─── NAV SCROLL ───
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // ─── MOBILE NAV ───
+  document.getElementById('menuBtn').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.add('open');
+  });
+  document.getElementById('menuClose').addEventListener('click', closeMobileNav);
+  function closeMobileNav() {
+    document.getElementById('mobileNav').classList.remove('open');
+  }
+
+  // ─── CAROUSEL ───
+  let currentSlide = 0;
+  const totalSlides = 3;
+  let autoplayTimer;
+
+  function goToSlide(n) {
+    currentSlide = n;
+    document.getElementById('carouselTrack').style.transform = `translateX(-${n * 100}%)`;
+    document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === n);
+    });
+  }
+
+  function nextSlide() {
+    goToSlide((currentSlide + 1) % totalSlides);
+  }
+
+  function startAutoplay() {
+    autoplayTimer = setInterval(nextSlide, 5000);
+  }
+
+  startAutoplay();
+
+  // pause on hover
+  const carouselEl = document.querySelector('#home');
+  carouselEl.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+  carouselEl.addEventListener('mouseleave', startAutoplay);
+
+  // ─── PROGRAM TABS ───
+  function switchTab(btn, tabId) {
+    document.querySelectorAll('.prog-tab').forEach(t => {
+      t.style.background = 'transparent';
+      t.style.color = 'rgba(255,255,255,0.6)';
+      t.style.borderColor = 'rgba(255,255,255,0.15)';
+    });
+    btn.style.background = 'rgba(255,255,255,0.15)';
+    btn.style.color = 'white';
+    btn.style.borderColor = 'rgba(255,255,255,0.3)';
+
+    document.getElementById('tab-clinic').style.display = tabId === 'clinic' ? 'grid' : 'none';
+    document.getElementById('tab-evaluation').style.display = tabId === 'evaluation' ? 'grid' : 'none';
+  }
+
+  // ─── FADE IN ON SCROLL ───
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // ─── FORM SUBMIT ───
+  function submitForm(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.btn-submit');
+    btn.textContent = '✅ 신청이 접수되었습니다!';
+    btn.style.background = '#2E5A4A';
+    setTimeout(() => {
+      btn.textContent = '📋 상담 신청하기';
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  }
+</script>
+</body>
+</html>
