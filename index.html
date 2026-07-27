@@ -47,7 +47,7 @@
   --white: #ffffff;
   --serif: 'Nanum Myeongjo', 'Noto Serif KR', serif;
   --sans: 'Pretendard Variable', Pretendard, -apple-system, sans-serif;
-  --shadow: 0 16px 48px rgba(58,46,39,0.07);
+  --shadow: 0 16px 48px rgba(58,46,39,0.11);
   --section-pad: 140px 64px;
   --section-pad-m: 96px 24px;
   --radius: 2px;
@@ -83,6 +83,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .reveal-d1 { transition-delay: 0.1s; }
 .reveal-d2 { transition-delay: 0.2s; }
 .reveal-d3 { transition-delay: 0.3s; }
+.accent { color: var(--terracotta); }
+
+/* Typography rhythm */
+.section-title { font-family: var(--serif); font-size: clamp(26px, 3vw, 40px); font-weight: 800; line-height: 1.35; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 16px; }
+.section-title .accent { color: var(--terracotta); }
+.section-desc { font-size: 15px; font-weight: 300; color: var(--ink-60); line-height: 2; }
 
 /* Logo mark */
 .logo-mark { width: 40px; height: 40px; flex-shrink: 0; }
@@ -160,9 +166,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* Hero */
 #home { padding: var(--section-pad); background: var(--cream); }
 .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; min-height: calc(100vh - 120px); }
-.hero-title { font-family: var(--serif); font-size: clamp(32px, 4.2vw, 54px); font-weight: 800; line-height: 1.25; letter-spacing: -0.03em; color: var(--terracotta); margin-bottom: 24px; }
+.hero-title { font-family: var(--serif); font-size: clamp(32px, 4.2vw, 54px); font-weight: 800; line-height: 1.25; letter-spacing: -0.03em; color: var(--ink); margin-bottom: 24px; }
 .hero-title .accent { color: var(--terracotta); }
-.hero-sub { font-size: clamp(15px, 1.4vw, 18px); color: var(--ink-60); line-height: 2; margin-bottom: 36px; max-width: 480px; }
+.hero-sub { font-size: clamp(15px, 1.4vw, 18px); font-weight: 300; color: var(--ink-60); line-height: 2; margin-bottom: 36px; max-width: 480px; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 .btn-primary {
   display: inline-flex; align-items: center; padding: 16px 28px;
@@ -192,8 +198,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .hero-stat-1 { bottom: 32px; left: -32px; }
 .hero-stat-2 { top: 48px; right: -24px; }
-.hero-stat .num { font-family: var(--serif); font-size: 28px; font-weight: 800; color: var(--terracotta); line-height: 1; }
-.hero-stat .label { font-size: 12px; color: var(--ink-60); margin-top: 6px; line-height: 1.6; }
+.hero-stat .num { font-family: var(--serif); font-size: clamp(32px, 4vw, 40px); font-weight: 800; color: var(--terracotta); line-height: 1; }
+.hero-stat .label { font-size: 11px; font-weight: 400; color: var(--ink-60); margin-top: 8px; line-height: 1.65; }
 
 .trust-strip {
   display: flex; flex-wrap: wrap; justify-content: center; gap: 0;
@@ -236,9 +242,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 #about { padding: var(--section-pad); background: var(--cream); }
 .about-layout { display: grid; grid-template-columns: 340px 1fr; gap: 80px; align-items: start; }
 .about-sticky { position: sticky; top: 120px; }
-.section-title { font-family: var(--serif); font-size: clamp(26px, 3vw, 40px); font-weight: 800; line-height: 1.35; letter-spacing: -0.02em; color: var(--terracotta); margin-bottom: 16px; }
-.section-desc { font-size: 15px; color: var(--ink-60); line-height: 2; }
-.about-body { font-size: 15px; color: var(--ink-60); line-height: 2; margin-bottom: 32px; }
+.about-body { font-size: 15px; font-weight: 300; color: var(--ink-60); line-height: 2; margin-bottom: 32px; }
 .about-body strong { color: var(--ink); font-weight: 600; }
 .credential-cards { display: flex; flex-direction: column; gap: 16px; }
 .credential-card {
@@ -271,8 +275,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .prog-row:first-child { border-top: 1px solid var(--line); }
 .prog-row:hover { background: var(--terracotta); padding-left: 36px; padding-right: 36px; }
-.prog-row:hover .prog-num, .prog-row:hover .prog-name, .prog-row:hover .prog-en, .prog-row:hover .prog-desc, .prog-row:hover .prog-tags { color: var(--white); }
-.prog-row:hover .prog-tags span { color: rgba(255,255,255,0.5); }
+.prog-row:hover .prog-num, .prog-row:hover .prog-name, .prog-row:hover .prog-en, .prog-row:hover .prog-desc { color: var(--white); }
 .prog-row:hover .prog-arrow { background: var(--white); border-color: var(--white); }
 .prog-row:hover .prog-arrow svg { stroke: var(--terracotta); transform: rotate(-45deg); }
 .prog-num { font-family: var(--serif); font-size: 14px; color: var(--ochre); font-weight: 700; }
@@ -280,7 +283,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .prog-en { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-40); margin-top: 4px; }
 .prog-desc { font-size: 14px; color: var(--ink-60); line-height: 1.85; }
 .prog-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-.prog-tags span { font-size: 12px; color: var(--ink-40); }
+.prog-tags span {
+  background: var(--moss-pale); color: var(--moss-deep);
+  padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 600;
+}
+.prog-row:hover .prog-tags span { background: rgba(255,255,255,0.14); color: rgba(255,255,255,0.88); }
 .prog-arrow {
   width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line);
   display: flex; align-items: center; justify-content: center; justify-self: end;
@@ -343,9 +350,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .faq-list { max-width: 800px; margin: 48px auto 0; }
 .faq-item { border-bottom: 1px solid var(--line); }
 .faq-question {
-  width: 100%; text-align: left; padding: 24px 0; font-size: 16px; font-weight: 600;
-  color: var(--terracotta); display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  width: 100%; text-align: left; padding: 24px 0; font-size: 16px; font-weight: 700;
+  color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  transition: color 0.2s;
 }
+.faq-question:hover { color: var(--terracotta); }
+.faq-question:hover svg { stroke: var(--terracotta); }
 .faq-question svg { flex-shrink: 0; transition: transform 0.25s, stroke 0.25s; stroke: var(--moss-deep); }
 .faq-item.open .faq-question {
   background: var(--terracotta); color: var(--white);
@@ -354,7 +364,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .faq-item.open .faq-question svg { transform: rotate(180deg); stroke: var(--white); }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s; }
 .faq-item.open .faq-answer { max-height: 400px; padding-bottom: 24px; }
-.faq-answer p { font-size: 14px; color: var(--ink-60); line-height: 1.9; }
+.faq-answer p { font-size: 14px; font-weight: 300; color: var(--ink-60); line-height: 1.9; word-break: keep-all; overflow-wrap: break-word; }
 .faq-note { font-size: 12px; color: var(--ink-40); text-align: center; margin-top: 32px; }
 
 /* Contact */
@@ -370,16 +380,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 #contact > .container { position: relative; z-index: 1; }
 #contact .section-title, #contact .section-desc { color: var(--white); }
+#contact .section-title .accent { color: var(--clay); }
 #contact .eyebrow span { color: var(--ochre); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
-.form-card { background: var(--white); border-radius: var(--radius); padding: 40px; }
+.form-card { background: var(--white); border-radius: var(--radius); padding: 40px; box-shadow: var(--shadow); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .form-group { margin-bottom: 20px; }
-.form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--ink); margin-bottom: 8px; letter-spacing: 0.04em; }
+.form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--ink); margin-bottom: 8px; letter-spacing: 0.04em; word-break: keep-all; }
+.faq-question span { word-break: keep-all; overflow-wrap: break-word; }
 .form-group input, .form-group select, .form-group textarea {
   width: 100%; padding: 12px 0; border: none; border-bottom: 1px solid var(--line);
-  font-size: 14px; font-family: var(--sans); color: var(--ink); background: transparent; outline: none;
-  transition: border-color 0.2s; border-radius: 0;
+  font-size: 16px; font-family: var(--sans); color: var(--ink); background: transparent; outline: none;
+  transition: border-color 0.2s; border-radius: 0; box-sizing: border-box;
+  word-break: keep-all; overflow-wrap: break-word;
 }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-bottom-color: var(--terracotta); }
 .form-group textarea { height: 80px; resize: vertical; }
@@ -396,19 +409,29 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: var(--radius); padding: 24px;
 }
 .info-card .info-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ochre); margin-bottom: 8px; }
-.info-card .info-value { font-size: 15px; color: var(--white); font-weight: 500; line-height: 1.7; }
-.info-card .info-note { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 4px; }
-.map-slot {
-  margin-top: 16px; height: 220px; border: 1px solid rgba(255,255,255,0.12);
+.info-card .info-value { font-size: 15px; color: var(--white); font-weight: 500; line-height: 1.7; word-break: keep-all; overflow-wrap: break-word; }
+.info-card .info-note { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 4px; word-break: keep-all; }
+.map-static {
+  margin-top: 16px; border: 1px solid rgba(255,255,255,0.12);
   border-radius: var(--radius); overflow: hidden; background: rgba(255,255,255,0.04);
 }
-.map-slot iframe { width: 100%; height: 100%; border: 0; display: block; }
+.map-static img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.map-actions { display: flex; flex-wrap: wrap; gap: 10px; padding: 14px 16px; }
+.map-open-btn {
+  display: inline-flex; align-items: center; padding: 10px 16px;
+  background: var(--terracotta); color: var(--white); font-size: 13px; font-weight: 600;
+  border-radius: var(--radius); transition: background 0.2s;
+}
+.map-open-btn:hover { background: var(--ochre); color: var(--ink); }
+.map-open-btn--alt { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+.map-open-btn--alt:hover { background: rgba(255,255,255,0.18); color: var(--white); }
 
 /* Footer */
 footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.55); padding: 64px 64px 32px; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto 40px; }
 .footer-brand .name { font-family: var(--serif); font-size: 18px; color: var(--white); font-weight: 700; margin-bottom: 12px; }
-.footer-brand p { font-size: 13px; line-height: 1.85; }
+.footer-brand p { font-size: 13px; line-height: 1.85; word-break: keep-all; overflow-wrap: break-word; }
+.footer-brand a.contact-link { word-break: break-all; }
 .footer-col h4 { font-size: 12px; font-weight: 700; color: var(--white); letter-spacing: 0.08em; margin-bottom: 16px; }
 .footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.45); margin-bottom: 10px; transition: color 0.2s; }
 .footer-col a:hover { color: var(--white); }
@@ -453,6 +476,13 @@ footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.55); padd
   .prog-arrow { display: none; }
   .floating-cta { display: flex; }
   footer { padding: 48px 24px 24px; }
+}
+@media (max-width: 480px) {
+  .hero-title { font-size: clamp(30px, 8vw, 40px); }
+  .section-title { font-size: clamp(22px, 6vw, 28px); }
+  .map-actions { flex-direction: column; }
+  .map-open-btn { width: 100%; justify-content: center; }
+  .footer-bottom { flex-direction: column; gap: 12px; align-items: flex-start; }
 }
 </style>
 </head>
@@ -616,7 +646,7 @@ footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.55); padd
     <div class="about-layout">
       <div class="about-sticky reveal">
         <div class="eyebrow"><span>기관소개</span></div>
-        <h2 class="section-title">대한민국 아동상담의<br>역사를 함께해 온 곳</h2>
+        <h2 class="section-title">대한민국 아동상담의<br><span class="accent">역사</span>를 함께해 온 곳</h2>
         <p class="section-desc">1996년 설립 이래, 아이 한 명 한 명의 고유한 특성을 존중하는 전문 치료를 이어오고 있습니다.</p>
       </div>
       <div>
@@ -652,7 +682,7 @@ footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.55); padd
 <section id="programs">
   <div class="container">
     <div class="eyebrow reveal"><span>치료프로그램</span></div>
-    <h2 class="section-title reveal reveal-d1">아이의 필요에 맞는<br>전문 치료 프로그램</h2>
+    <h2 class="section-title reveal reveal-d1">아이의 필요에 맞는<br><span class="accent">전문 치료 프로그램</span></h2>
     <div class="prog-tabs reveal reveal-d2">
       <button class="prog-tab active" data-tab="clinic">아동청소년 클리닉</button>
       <button class="prog-tab" data-tab="evaluation">평가 및 상담클리닉</button>
@@ -742,7 +772,7 @@ footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.55); padd
 <section id="therapists">
   <div class="container">
     <div class="eyebrow reveal"><span>치료사 소개</span></div>
-    <h2 class="section-title reveal reveal-d1">30년을 함께한<br>전문가들을 소개합니다</h2>
+    <h2 class="section-title reveal reveal-d1">30년을 함께한<br><span class="accent">전문가들</span>을 소개합니다</h2>
 
     <div class="therapists-featured reveal">
       <div class="therapist-photo">
@@ -821,7 +851,7 @@ footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.55); padd
 <section id="media">
   <div class="container">
     <div class="eyebrow reveal"><span>방송 및 보도자료</span></div>
-    <h2 class="section-title reveal reveal-d1">언론이 주목한<br>한국아동상담센터</h2>
+    <h2 class="section-title reveal reveal-d1">언론이 주목한<br><span class="accent">한국아동상담센터</span></h2>
     <div class="media-layout reveal reveal-d2">
       <div class="media-featured">
         <div>
@@ -871,39 +901,39 @@ footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.55); padd
 <section id="faq">
   <div class="container">
     <div class="eyebrow reveal" style="justify-content:center;"><span>자주 묻는 질문</span></div>
-    <h2 class="section-title reveal reveal-d1" style="text-align:center;">상담 전<br>궁금한 점들</h2>
+    <h2 class="section-title reveal reveal-d1" style="text-align:center;">상담 전<br><span class="accent">궁금한 점</span>들</h2>
     <div class="faq-list">
       <div class="faq-item reveal">
         <button class="faq-question" aria-expanded="false">
-          상담을 받으면 아이에게 기록이 남지 않나요?
+          <span>상담을 받으면 아이에게 기록이 남지 않나요?</span>
           <svg width="20" height="20" fill="none" stroke-width="1.5"><use href="#icon-chevron"/></svg>
         </button>
         <div class="faq-answer"><p>센터에서의 상담 기록은 치료 목적으로만 활용되며, 아이의 치료 계획 수립과 진행 상황 파악을 위해 필요한 범위 내에서 관리됩니다. 기록의 보관 및 활용에 대해서는 상담 시작 전에 충분히 안내해 드립니다.</p></div>
       </div>
       <div class="faq-item reveal reveal-d1">
         <button class="faq-question" aria-expanded="false">
-          어떤 경우에 센터를 방문하는 것이 좋을까요?
+          <span>어떤 경우에 센터를 방문하는 것이 좋을까요?</span>
           <svg width="20" height="20" fill="none" stroke-width="1.5"><use href="#icon-chevron"/></svg>
         </button>
         <div class="faq-answer"><p>아이의 정서·행동·발달·학습·대인관계 등에서 또래와 비교해 지속적인 어려움이 관찰되거나, 가족 내 갈등이 심화되는 경우 전문가의 평가와 상담을 고려해 보실 수 있습니다. 정확한 판단을 위해 먼저 전화 상담을 통해 방문 여부를 안내받으실 수 있습니다.</p></div>
       </div>
       <div class="faq-item reveal reveal-d2">
         <button class="faq-question" aria-expanded="false">
-          경계성 지능은 어떻게 평가하고 도와주시나요?
+          <span>경계성 지능은 어떻게 평가하고 도와주시나요?</span>
           <svg width="20" height="20" fill="none" stroke-width="1.5"><use href="#icon-chevron"/></svg>
         </button>
         <div class="faq-answer"><p>2008년 국내 최초로 경계성 지능군 특성을 연구한 정희정 소장의 임상 경험을 바탕으로, 지능검사·종합심리검사·발달평가 등을 통해 아이의 강점과 어려움을 종합적으로 파악합니다. 평가 결과에 따라 학습치료, 사회성 훈련, 부모 상담 등 맞춤 프로그램을 함께 설계합니다.</p></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-question" aria-expanded="false">
-          치료 기간은 보통 얼마나 걸리나요?
+          <span>치료 기간은 보통 얼마나 걸리나요?</span>
           <svg width="20" height="20" fill="none" stroke-width="1.5"><use href="#icon-chevron"/></svg>
         </button>
         <div class="faq-answer"><p>치료 기간은 아이의 상태, 치료 목표, 가족의 참여 정도 등에 따라 달라집니다. 초기 평가 후 치료 계획을 수립하며, 정기적인 점검을 통해 필요한 기간과 방향을 함께 조율해 나갑니다.</p></div>
       </div>
       <div class="faq-item reveal reveal-d1">
         <button class="faq-question" aria-expanded="false">
-          부모 상담은 꼭 함께 받아야 하나요?
+          <span>부모 상담은 꼭 함께 받아야 하나요?</span>
           <svg width="20" height="20" fill="none" stroke-width="1.5"><use href="#icon-chevron"/></svg>
         </button>
         <div class="faq-answer"><p>아동 치료의 효과를 높이기 위해 부모 상담을 권장드리고 있습니다. 다만 아이의 상황과 가족 환경에 따라 참여 방식과 빈도는 유연하게 조정할 수 있으며, 상담 시작 전에 함께 논의합니다.</p></div>
@@ -916,7 +946,7 @@ footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.55); padd
 <section id="contact">
   <div class="container">
     <div class="eyebrow reveal"><span>상담신청 · 찾아오시는 길</span></div>
-    <h2 class="section-title reveal reveal-d1" style="color:var(--white);">지금 바로<br>상담을 시작하세요</h2>
+    <h2 class="section-title reveal reveal-d1" style="color:var(--white);">지금 바로<br><span class="accent">상담을 시작</span>하세요</h2>
     <div class="contact-grid">
       <div class="form-card reveal reveal-d1">
         <form onsubmit="submitForm(event)">
@@ -967,14 +997,12 @@ footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.55); padd
             <div class="info-value">건물 내 주차 가능 (상세 안내 준비 중)</div>
           </div>
         </div>
-        <div class="map-slot">
-          <iframe
-            title="한국아동상담센터 위치 — 네이버 지도"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://map.naver.com/v5/embed/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%96%B8%EC%A3%BC%EB%A1%9C%20201%20SK%EB%A6%AC%EB%8D%94%EC%8A%A4%EB%B7%B0?c=127.0315,37.5160,17,0,0,0,dh"
-            allowfullscreen>
-          </iframe>
+        <div class="map-static">
+          <img src="images/map-preview.svg" alt="한국아동상담센터 강남지점 위치 지도" loading="lazy">
+          <div class="map-actions">
+            <a href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%96%B8%EC%A3%BC%EB%A1%9C%20201%20SK%EB%A6%AC%EB%8D%94%EC%8A%A4%EB%B7%B0" target="_blank" rel="noopener" class="map-open-btn">네이버지도로 보기</a>
+            <a href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%96%B8%EC%A3%BC%EB%A1%9C%20201%20SK%EB%A6%AC%EB%8D%94%EC%8A%A4%EB%B7%B0" target="_blank" rel="noopener" class="map-open-btn map-open-btn--alt">카카오맵으로 보기</a>
+          </div>
         </div>
       </div>
     </div>
