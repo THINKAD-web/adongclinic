@@ -6,6 +6,24 @@
 <title>한국아동상담센터 – 30년의 통찰, 수만 시간의 임상이 증명하는 변화</title>
 <meta name="description" content="1996년부터 아이들의 곁을 지켜온 한국아동상담센터. 놀이치료, 감각통합치료, 언어치료, 학습치료, 경계성 지능, 발달성 협응장애 전문 클리닉.">
 <meta name="keywords" content="한국아동상담센터, 놀이치료 강남, 감각통합치료, 경계성 지능, 발달성 협응장애, 작업치료, 아동상담, 언어치료">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "한국아동상담센터",
+  "founder": { "@type": "Person", "name": "정희정" },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "언주로 201 SK리더스뷰 702호",
+    "addressLocality": "강남구",
+    "addressRegion": "서울특별시",
+    "addressCountry": "KR"
+  },
+  "telephone": ["+82-2-3476-5009", "+82-2-532-5077"],
+  "email": "kidcenter@hanmail.net",
+  "url": "https://adongclinic.vercel.app"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -77,6 +95,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: 10px 64px; font-size: 12px; color: var(--ink-60);
   text-align: right;
 }
+.util-bar a { color: inherit; text-decoration: none; }
+.util-bar a:hover strong { color: var(--terracotta-deep); }
+.info-card a, .footer-brand a.contact-link {
+  color: var(--clay); text-decoration: underline; text-underline-offset: 3px;
+}
+.info-card a:hover, .footer-brand a.contact-link:hover { color: var(--white); }
 .util-bar strong { color: var(--terracotta); font-weight: 600; }
 
 /* Nav */
@@ -375,10 +399,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .info-card .info-value { font-size: 15px; color: var(--white); font-weight: 500; line-height: 1.7; }
 .info-card .info-note { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 4px; }
 .map-slot {
-  margin-top: 16px; height: 180px; border: 1px dashed rgba(255,255,255,0.2);
-  border-radius: var(--radius); display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,0.4); font-size: 13px;
+  margin-top: 16px; height: 220px; border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius); overflow: hidden; background: rgba(255,255,255,0.04);
 }
+.map-slot iframe { width: 100%; height: 100%; border: 0; display: block; }
 
 /* Footer */
 footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.55); padding: 64px 64px 32px; }
@@ -450,7 +474,7 @@ footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.55); padd
 </svg>
 
 <header class="site-header" id="siteHeader">
-  <div class="util-bar">상담 예약 <strong>02-000-0000</strong> · 평일 09:00–18:00</div>
+  <div class="util-bar">상담 예약 <a href="tel:+82234765009"><strong>02-3476-5009</strong></a> · 평일 09:00–18:00</div>
   <nav class="main-nav" id="mainNav">
     <a href="#home" class="nav-logo">
       <svg class="logo-mark" aria-hidden="true"><use href="#logo-mark"/></svg>
@@ -926,24 +950,32 @@ footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.55); padd
       </div>
       <div class="reveal reveal-d2">
         <h3 class="section-title" style="font-size:24px;color:var(--white);margin-bottom:12px;">찾아오시는 길</h3>
-        <p style="font-size:14px;color:rgba(255,255,255,0.6);margin-bottom:24px;line-height:1.85;">강남구에 위치한 한국아동상담센터입니다.<br>주소 확정 후 아래 정보가 업데이트됩니다.</p>
+        <p style="font-size:14px;color:rgba(255,255,255,0.6);margin-bottom:24px;line-height:1.85;">강남구 언주로에 위치한 한국아동상담센터 강남지점입니다.</p>
         <div class="info-cards">
           <div class="info-card">
             <div class="info-label">주소</div>
-            <div class="info-value">서울특별시 강남구 (정확한 주소 업데이트 예정)</div>
-            <div class="info-note">지하철 및 버스 안내는 주소 확정 후 추가됩니다</div>
+            <div class="info-value">서울특별시 강남구 언주로 201 SK리더스뷰 702호</div>
+            <div class="info-note">매봉역(3호선) 도보 약 4분 · 도곡역 환승 이용 가능</div>
           </div>
           <div class="info-card">
             <div class="info-label">전화 문의</div>
-            <div class="info-value">02-000-0000 (업데이트 예정)</div>
+            <div class="info-value"><a href="tel:+82234765009">02-3476-5009</a> / <a href="tel:+8225325077">02-532-5077</a></div>
             <div class="info-note">평일 09:00 – 18:00</div>
           </div>
           <div class="info-card">
             <div class="info-label">주차</div>
-            <div class="info-value">건물 내 주차 가능 (업데이트 예정)</div>
+            <div class="info-value">건물 내 주차 가능 (상세 안내 준비 중)</div>
           </div>
         </div>
-        <div class="map-slot">지도 (네이버·카카오맵 임베드 예정)<br><span style="font-size:11px;margin-top:4px;display:block;">주소 확정 후 지도가 표시됩니다</span></div>
+        <div class="map-slot">
+          <iframe
+            title="한국아동상담센터 위치 — 네이버 지도"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://map.naver.com/v5/embed/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B0%95%EB%82%A8%EA%B5%AC%20%EC%96%B8%EC%A3%BC%EB%A1%9C%20201%20SK%EB%A6%AC%EB%8D%94%EC%8A%A4%EB%B7%B0?c=127.0315,37.5160,17,0,0,0,dh"
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
     </div>
   </div>
@@ -957,14 +989,17 @@ footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.55); padd
         <div class="name" style="margin:0;">한국아동상담센터</div>
       </div>
       <p>1996년부터 아이들의 곁을 지켜온 한국아동상담센터.<br>30년의 통찰, 수만 시간의 임상이 증명하는 변화.</p>
-      <p style="margin-top:16px;font-size:12px;">대표: 정희정 | 사업자등록번호: 업데이트 예정<br>서울특별시 강남구 | Tel: 업데이트 예정</p>
+      <p style="margin-top:16px;font-size:12px;">대표: 정희정<br>서울특별시 강남구 언주로 201 SK리더스뷰 702호<br>Tel: <a class="contact-link" href="tel:+82234765009">02-3476-5009</a> / <a class="contact-link" href="tel:+8225325077">02-532-5077</a><br>Email: <a class="contact-link" href="mailto:kidcenter@hanmail.net">kidcenter@hanmail.net</a></p>
     </div>
     <div class="footer-col"><h4>기관</h4><a href="#about">기관소개</a><a href="#therapists">치료사 소개</a><a href="#media">방송 및 보도자료</a></div>
     <div class="footer-col"><h4>치료프로그램</h4><a href="#programs">놀이치료</a><a href="#programs">언어치료</a><a href="#programs">감각통합치료</a><a href="#programs">경계성 지능</a><a href="#programs">발달성 협응장애</a></div>
     <div class="footer-col"><h4>상담 안내</h4><a href="#contact">상담신청</a><a href="#contact">찾아오시는 길</a><a href="#">개인정보처리방침</a></div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; 2026 한국아동상담센터. All rights reserved.</p>
+    <div>
+      <p>&copy; 2026 한국아동상담센터. All rights reserved.</p>
+      <p style="font-size:11px;color:rgba(255,255,255,0.3);margin-top:4px;">Copyright &copy; ThinKAD All rights reserved.</p>
+    </div>
     <p style="font-size:11px;color:rgba(255,255,255,0.3);">아이들의 더 밝은 내일을 위해</p>
   </div>
 </footer>
