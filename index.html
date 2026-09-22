@@ -334,22 +334,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* Facility gallery */
 #facility { padding: var(--section-pad); background: var(--white); }
-.facility-tabs { display: flex; gap: 32px; border-bottom: 1px solid var(--line); margin: 48px 0 32px; }
-.facility-tab {
-  padding: 12px 0; font-size: 15px; font-weight: 500; color: var(--ink-40);
-  border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color 0.2s, border-color 0.2s;
-}
-.facility-tab.active { color: var(--terracotta); border-bottom-color: var(--terracotta); font-weight: 600; }
-.facility-panel { display: none; }
-.facility-panel.active { display: grid; }
 .facility-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+  margin-top: 48px;
 }
 .facility-grid img {
   width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--radius);
   cursor: pointer; transition: transform 0.25s, box-shadow 0.25s;
 }
 .facility-grid img:hover { transform: scale(1.02); box-shadow: var(--shadow); }
+@media (min-width: 900px) {
+  .facility-grid { grid-template-columns: repeat(3, 1fr); }
+}
 .lightbox {
   display: none; position: fixed; inset: 0; z-index: 2000;
   background: rgba(58,46,39,0.88); align-items: center; justify-content: center; padding: 24px;
@@ -358,9 +354,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .lightbox img { max-width: min(960px, 100%); max-height: 90vh; object-fit: contain; border-radius: var(--radius); }
 .lightbox-close {
   position: absolute; top: 20px; right: 24px; font-size: 32px; color: var(--white); line-height: 1;
-}
-@media (max-width: 720px) {
-  .facility-grid { grid-template-columns: repeat(2, 1fr); }
 }
 .specialized-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .specialized-tags span {
@@ -861,20 +854,14 @@ footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.75); padd
     <div class="eyebrow reveal"><span>Facility</span></div>
     <h2 class="section-title reveal reveal-d1">아이에게 편안한 <span class="accent">공간</span></h2>
     <p class="section-desc reveal reveal-d2" style="max-width:560px;margin-top:16px;">낯선 상담이 아닌, 놀러 오고 싶은 공간을 만들었습니다.</p>
-    <div class="facility-tabs reveal reveal-d2">
-      <button type="button" class="facility-tab active" data-facility="center">센터시설</button>
-      <button type="button" class="facility-tab" data-facility="play">놀이시설</button>
-    </div>
-    <div class="facility-panel facility-grid active" id="facility-center">
+    <div class="facility-grid reveal reveal-d2">
       <img src="images/facility/facility-1.jpg" alt="한국아동상담센터 센터시설 전경" loading="lazy" data-lightbox>
       <img src="images/facility/facility-2.jpg" alt="한국아동상담센터 상담 공간" loading="lazy" data-lightbox>
       <img src="images/facility/facility-3.jpg" alt="한국아동상담센터 대기 및 휴게 공간" loading="lazy" data-lightbox>
       <img src="images/facility/facility-4.jpg" alt="한국아동상담센터 치료실 복도" loading="lazy" data-lightbox>
       <img src="images/facility/facility-5.jpg" alt="한국아동상담센터 내부 시설" loading="lazy" data-lightbox>
-    </div>
-    <div class="facility-panel facility-grid" id="facility-play">
-      <img src="images/play-area/play-1.jpg" alt="한국아동상담센터 놀이시설" loading="lazy" data-lightbox>
-      <img src="images/play-area/play-2.jpg" alt="한국아동상담센터 놀이치료 공간" loading="lazy" data-lightbox>
+      <img src="images/play-area/play-1.jpg" alt="한국아동상담센터 놀이치료 공간" loading="lazy" data-lightbox>
+      <img src="images/play-area/play-2.jpg" alt="한국아동상담센터 놀이치료실" loading="lazy" data-lightbox>
       <img src="images/play-area/play-3.jpg" alt="한국아동상담센터 감각놀이 공간" loading="lazy" data-lightbox>
     </div>
   </div>
@@ -1088,16 +1075,18 @@ footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.75); padd
         <div class="therapist-info">
           <div class="therapist-role">감각통합 전문가</div>
           <div class="therapist-name">구민경</div>
-          <div class="therapist-title">30년 경력의 감각통합·발달재활 전문가</div>
+          <div class="therapist-title">감각통합치료 · 작업치료 전문가</div>
           <p class="therapist-quote">아이의 감각과 움직임을 이해하고, 일상의 성장을 함께합니다.</p>
           <ul class="therapist-specs">
-            <li>연세대학교 보건과학대학 작업치료 전공</li>
-            <li>감각통합치료 및 발달평가 전문</li>
-            <li>발달성 협응장애(DCD) 전문</li>
-            <li>전) 이화여대 발달장애센터 감각통합실 책임연구원</li>
-            <li>전) 한국아동발달연구소 작업치료실 팀장</li>
             <li>대한작업치료협회 평생회원</li>
-            <li>30년 이상 임상경력 (1991~현재)</li>
+            <li>대한감각발달재활협회 회원</li>
+            <li>특수 감각통합 교육사 2급 자격회원</li>
+            <li>한국정신보건작업치료학회 정회원</li>
+            <li>이혜련 신경정신과의원 &amp; 한국아동발달연구소 작업치료실 근무 팀장</li>
+            <li>이화여대 발달장애센터 감각통합실 연구원</li>
+            <li>한국아동신경발달연구소 책임연구원</li>
+            <li>설리번학습지원센터 감각통합실 주강사</li>
+            <li>(현) 한국아동상담센터 근무</li>
           </ul>
         </div>
       </div>
@@ -1126,7 +1115,7 @@ footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.75); padd
             <li>한국언어청각임상학회 정회원</li>
             <li>용인대학교 출강</li>
             <li>임상경력: 1994년~현재</li>
-            <li>EBS 라디오 「부모의 시간」, 매거진 &lt;베스트베이비&gt;·&lt;앙팡&gt; 인터뷰 및 글기고</li>
+            <li>EBS 라디오 「부모의 시간」, 매거진 &lt;베스트베이비&gt;, &lt;앙팡&gt; 인터뷰 및 글기고</li>
           </ul>
         </div>
       </div>
@@ -1181,38 +1170,39 @@ footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.75); padd
     <div class="eyebrow reveal"><span>커뮤니티</span></div>
     <h2 class="section-title reveal reveal-d1">센터의 활동과<br><span class="accent">지식을 나눕니다</span></h2>
     <div class="community-grid">
-      <a href="http://www.adongclinic.co.kr/bbs/board.php?bo_table=activities" target="_blank" rel="noopener" class="community-card community-card--link reveal">
+      <a href="community-activities.html" class="community-card community-card--link reveal">
         <h3>대외활동</h3>
         <p>교육청, 복지관, 학교 등 다양한 기관에서 아동·가족 상담 전문가로서 강의와 교육 활동을 이어오고 있습니다.</p>
         <ul class="community-list">
-          <li>2021년 창동종합사회복지관 「경계성 지능」 초청 강의 — 정희정 소장</li>
-          <li>2021년 강북·도봉·성북교육복지센터 전문가 교육 — 정희정 소장</li>
-          <li>2019년 예롬예술학교 · 도봉교육청 · 서울시 아동복지협회 초청 강의</li>
-          <li>2018–2019년 전민 새생명 어린이집 강의 — 김성은 선생님</li>
+          <li>2023년 10월15일 &lt;높은 뜻 씨앗이 되어 교회&gt;, 김성은 부소장님</li>
+          <li>2023년 9월3일, &lt;전민새생명교회&gt;, 김성은 부소장님</li>
+          <li>2023년 3월18일 &lt;부평 성광교회&gt;, 김성은 부소장님</li>
+          <li>2021년 10월 16일  &lt;경계성 지능&gt; 창동종합사회복지관 초청 강의 - 정희정 소장</li>
         </ul>
         <span class="community-link">대외활동 더 보기 →</span>
       </a>
-      <a href="http://www.adongclinic.co.kr/bbs/board.php?bo_table=Press" target="_blank" rel="noopener" class="community-card community-card--link reveal reveal-d1">
+      <a href="community-press.html" class="community-card community-card--link reveal reveal-d1">
         <h3>방송 및 보도자료</h3>
         <p>EBS, SBS, KBS, MBC 등 주요 방송과 신문을 통해 아동 정서·발달·경계성 지능에 대한 전문 정보를 전달해 왔습니다.</p>
         <ul class="community-list">
-          <li>EBS 「심층취재」 경계선 지능 25편 시리즈</li>
-          <li>EBS 「생방송 60분 부모」 다수 출연</li>
-          <li>중앙일보 · 동아일보 · 조선일보 · 한겨레 인터뷰 및 기고</li>
+          <li>2024년 3월2일 &lt;SBS 그것이 알고 싶다&gt;, 김성은 부소장님</li>
+          <li>2017년 10월, 한겨례신문 : 자신감없는 아이, 소극적인 아이, 도전하지 않는 아이</li>
+          <li>2016년 11월. 한겨례 신문, 형제간 갈등 해결</li>
+          <li>2016.01.28. SBS 꾸러기 탐구생활</li>
         </ul>
         <span class="community-link">방송 및 보도자료 더 보기 →</span>
       </a>
-      <a href="http://www.adongclinic.co.kr/bbs/board.php?bo_table=writing" target="_blank" rel="noopener" class="community-card community-card--link reveal reveal-d2">
+      <a href="community-writing.html" class="community-card community-card--link reveal reveal-d2">
         <h3>저술 및 연구활동</h3>
         <p>김성은 선생님을 중심으로 양육·가족 분야 저서 7권을 출간하였으며, 정희정 소장은 경계성 지능 연구로 국내 최초 박사 논문을 발표했습니다.</p>
         <ul class="community-list">
-          <li>「자녀와 궁합이 맞습니까」(1995)</li>
-          <li>「나와 다른 아이 어떻게 키울까」(2006)</li>
-          <li>「내 아이를 위한 사랑 표현 학교」(2007)</li>
-          <li>「부모가 주고 싶은 사랑, 아이가 원하는 사랑」(2009)</li>
-          <li>「엄마만 모르는 내 아이 속 마음」(2011)</li>
-          <li>「가족에게는 특별한 힘이 있다」(2012)</li>
-          <li>「왜 나는 아이와 자꾸 부딪칠까」(2013)</li>
+          <li>나는 미친 결혼을 해버렸다</li>
+          <li>왜 나는 아이와 자꾸 부딪칠까? (2013년 출판)</li>
+          <li>가족에게는 특별한 힘이 있다 (2012년 출판)</li>
+          <li>엄마는 모르는 내아이 속마음 (2011년 출판)</li>
+          <li>부모가 주고 싶은 사랑 아이가 원하는 사랑 (2009년 출판)</li>
+          <li>내아이를 위한 사항 표현 학교 (2007년 출판)</li>
+          <li>나와 다른아이 어떻게 키울까? (2006년 출판)</li>
         </ul>
         <span class="community-link">저술 및 연구활동 더 보기 →</span>
       </a>
@@ -1235,48 +1225,55 @@ footer { background: var(--terracotta-deep); color: rgba(255,255,255,0.75); padd
     <div class="eyebrow reveal"><span>방송 및 보도자료</span></div>
     <h2 class="section-title reveal reveal-d1">언론이 주목한<br><span class="accent">한국아동상담센터</span></h2>
     <div class="media-layout reveal reveal-d2">
-      <div class="media-featured">
+      <a href="community-post.html?board=Press&amp;wr_id=67" class="media-featured" style="text-decoration:none;color:inherit;">
         <div>
           <div class="eyebrow"><span>Featured</span></div>
-          <p class="media-featured-meta">EBS 심층취재 · 2014</p>
-          <h3 class="media-featured-title">경계선 지능<br>"음지의 경계선 지능 — 해법은?"</h3>
-          <p class="media-featured-meta">정희정 소장 인터뷰 · 25편 시리즈</p>
+          <p class="media-featured-meta">2024 · SBS</p>
+          <h3 class="media-featured-title">SBS 「그것이 알고 싶다」<br>김성은 부소장님 출연</h3>
+          <p class="media-featured-meta">'좌절된 소망-유령이 된 62명의 아이들' 편 자문·출연</p>
         </div>
         <p class="media-featured-desc">국내 최초 경계선 지능군 연구자로서, 사각지대에 놓인 아이들의 현실을 전국에 알린 역사적인 방송입니다.</p>
-      </div>
+      </a>
       <div class="media-grid">
-        <div class="media-card">
+        <a href="community-post.html?board=Press&amp;wr_id=66" class="media-card" style="text-decoration:none;color:inherit;">
+          <span class="media-label">신문</span>
+          <div class="media-channel">한겨레신문</div>
+          <div class="media-card-title">자신감없는 아이, 소극적인 아이, 도전하지 않는 아이</div>
+          <div class="media-card-meta">2017 · 김성은 부소장님 자문</div>
+        </a>
+        <a href="community-post.html?board=Press&amp;wr_id=65" class="media-card" style="text-decoration:none;color:inherit;">
+          <span class="media-label">신문</span>
+          <div class="media-channel">한겨레신문</div>
+          <div class="media-card-title">형제간 갈등 해결</div>
+          <div class="media-card-meta">2016 · 김성은 부소장님 자문</div>
+        </a>
+        <a href="community-post.html?board=Press&amp;wr_id=36" class="media-card" style="text-decoration:none;color:inherit;">
+          <span class="media-label">방송</span>
+          <div class="media-channel">SBS</div>
+          <div class="media-card-title">꾸러기 탐구생활 &lt;춤&gt; 편</div>
+          <div class="media-card-meta">2016 · 심희원 소장님 출연</div>
+        </a>
+        <a href="community-post.html?board=Press&amp;wr_id=34" class="media-card" style="text-decoration:none;color:inherit;">
           <span class="media-label">방송</span>
           <div class="media-channel">EBS</div>
-          <div class="media-card-title">EBS 생방송 60분 부모 다수 출연</div>
-          <div class="media-card-meta">정희정 소장 · 김성은 선생님</div>
-        </div>
-        <div class="media-card">
-          <span class="media-label">신문</span>
-          <div class="media-channel">중앙일보 · 동아일보 · 조선일보 · 한겨레</div>
-          <div class="media-card-title">인터뷰 및 기고</div>
-          <div class="media-card-meta">아동 정서·발달·경계성 지능 주제</div>
-        </div>
-        <div class="media-card">
+          <div class="media-card-title">심층취재 '느린학습자'</div>
+          <div class="media-card-meta">2015 · 정희정 소장 인터뷰</div>
+        </a>
+        <a href="community-post.html?board=Press&amp;wr_id=32" class="media-card" style="text-decoration:none;color:inherit;">
           <span class="media-label">방송</span>
-          <div class="media-channel">SBS · KBS · MBC · YTN</div>
-          <div class="media-card-title">뉴스·토크 프로그램 출연</div>
-          <div class="media-card-meta">아동 정서 발달 전문가 코멘트</div>
-        </div>
-        <div class="media-card">
-          <span class="media-label">학술</span>
-          <div class="media-channel">숙명여대</div>
-          <div class="media-card-title">정희정 소장 박사논문 — 경계선 지적 기능 아동의 특성</div>
-          <div class="media-card-meta">국내 최초 연구 (2008)</div>
-        </div>
-        <div class="media-card" style="grid-column: span 2;">
+          <div class="media-channel">KBS NEWS</div>
+          <div class="media-card-title">주목! 이 기사 — 느린학습자를 아십니까</div>
+          <div class="media-card-meta">2014 · 정희정 소장</div>
+        </a>
+        <a href="community-post.html?board=Press&amp;wr_id=31" class="media-card" style="text-decoration:none;color:inherit;">
           <span class="media-label">강연</span>
-          <div class="media-channel">국회 · 교사 연수</div>
-          <div class="media-card-title">전문가 양성 강의</div>
-          <div class="media-card-meta">경계성 지능 인식 향상 및 정책 제언</div>
-        </div>
+          <div class="media-channel">국회정책포럼</div>
+          <div class="media-card-title">경계선 지능학생의 특성과 대책</div>
+          <div class="media-card-meta">2014 · 정희정 소장 주제발표</div>
+        </a>
       </div>
     </div>
+    <p style="margin-top:24px;text-align:center;"><a href="community-press.html" class="community-link">방송 및 보도자료 전체 보기 →</a></p>
   </div>
 </section>
 
@@ -1461,23 +1458,6 @@ document.querySelectorAll('.prog-tab').forEach(tab => {
     document.querySelectorAll('.prog-panel').forEach(p => p.classList.remove('active'));
     tab.classList.add('active');
     document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
-  });
-});
-
-document.querySelectorAll('.facility-tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    const targetId = 'facility-' + tab.dataset.facility;
-    document.querySelectorAll('.facility-tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.facility-panel').forEach(p => {
-      p.classList.remove('active');
-      p.style.display = 'none';
-    });
-    tab.classList.add('active');
-    const panel = document.getElementById(targetId);
-    if (panel) {
-      panel.classList.add('active');
-      panel.style.display = 'grid';
-    }
   });
 });
 

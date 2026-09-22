@@ -14,24 +14,28 @@
 </head>
 <body>
 
-<header class="site-header" id="siteHeader">
-  <nav class="main-nav">
-    <a href="index.html" class="nav-logo">
-      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
-        <circle cx="20" cy="20" r="19" fill="none" stroke="#C1694A" stroke-width="1.5"/>
-        <path d="M20 28 C20 28 12 22 12 16 C12 12 15 10 18 12 C19 10 21 10 22 12 C25 10 28 12 28 16 C28 22 20 28 20 28Z" fill="none" stroke="#5F6B47" stroke-width="1.3" stroke-linejoin="round"/>
-      </svg>
-      <div class="logo-text">
-        <span class="main">한국아동상담센터</span>
-        <span class="sub">Korea Child Counseling Center</span>
+<div class="nav-wrap" id="navWrap">
+  <header class="site-header" id="siteHeader">
+    <nav class="main-nav">
+      <a href="index.html" class="nav-logo">
+        <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="19" fill="none" stroke="#C1694A" stroke-width="1.5"/>
+          <path d="M20 28 C20 28 12 22 12 16 C12 12 15 10 18 12 C19 10 21 10 22 12 C25 10 28 12 28 16 C28 22 20 28 20 28Z" fill="none" stroke="#5F6B47" stroke-width="1.3" stroke-linejoin="round"/>
+        </svg>
+        <div class="logo-text">
+          <span class="main">한국아동상담센터</span>
+          <span class="sub">Korea Child Counseling Center</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <a href="index.html#contact" class="nav-cta">상담신청</a>
       </div>
-    </a>
-    <div style="display:flex;gap:10px;align-items:center;">
-      <a href="index.html#specialized" class="nav-back">← 특화클리닉</a>
-      <a href="index.html#contact" class="nav-cta">상담신청</a>
-    </div>
-  </nav>
-</header>
+    </nav>
+  </header>
+  <div class="specialty-subnav">
+    <a href="index.html#specialized" class="back-link">← 특화클리닉</a>
+  </div>
+</div>
 
 <p class="breadcrumb"><a href="index.html">홈</a> · <a href="index.html#specialized">특화클리닉</a> · 경계성지능</p>
 
@@ -48,7 +52,7 @@
     <div class="section-label"><span>Definition</span></div>
     <h2 class="section-heading">경계성지능군의 정의</h2>
     <p class="section-text">지적 장애와 정상 범위 사이의 경계선에 속하는 <strong>IQ 70–85</strong> 범위에 해당합니다.</p>
-    <p class="section-text">인구의 <strong>12%</strong> 정도의 높은 인구 비율을 차지합니다.</p>
+    <p class="section-text">인구의 <strong>13.6%</strong> 정도의 높은 인구 비율을 차지합니다.</p>
 
     <div class="chart-wrap">
       <svg viewBox="0 0 640 280" role="img" aria-label="지능의 정규분포 곡선, IQ 70-85 구간 강조">
@@ -209,6 +213,7 @@
         </article>
       </div>
     </div>
+    <p class="cred-crosslink"><a href="community-writing.html">저술 및 연구활동 아카이브 전체 보기 →</a></p>
   </div>
 </section>
 
@@ -244,7 +249,7 @@
 
 <script>
 window.addEventListener('scroll', () => {
-  document.getElementById('siteHeader').classList.toggle('scrolled', window.scrollY > 20);
+  document.getElementById('navWrap').classList.toggle('scrolled', window.scrollY > 20);
 });
 </script>
 </body>
